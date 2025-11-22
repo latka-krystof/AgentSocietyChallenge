@@ -1,4 +1,7 @@
-from .memory_modules import MemoryBase, MemoryDILU, MemoryGenerative, MemoryTP, MemoryVoyager
+from .memory_modules import (
+    MemoryBase, MemoryDILU, MemoryGenerative, MemoryTP, MemoryVoyager,
+    MemoryTopK, MemoryTemporalWeighted, MemoryGenerativeTopK, MemoryUserProfile
+)
 from .planning_modules import PlanningBase, PlanningDEPS, PlanningHUGGINGGPT, PlanningIO, PlanningOPENAGI, PlanningTD, PlanningVoyager
 from .reasoning_modules import (
     ReasoningBase, ReasoningCOT, ReasoningCOTSC, ReasoningDILU, ReasoningIO, 
@@ -10,6 +13,7 @@ from .tooluse_modules import ToolUseBase, ToolUseAnyTool, ToolUseIO, ToolUseTool
 from .tooluse_pool import tooluse_pool
 
 __all__ = ['MemoryBase', 'MemoryDILU', 'MemoryGenerative', 'MemoryTP', 'MemoryVoyager',
+           'MemoryTopK', 'MemoryTemporalWeighted', 'MemoryGenerativeTopK', 'MemoryUserProfile',
            'PlanningBase', 'PlanningDEPS', 'PlanningHUGGINGGPT', 'PlanningIO', 'PlanningOPENAGI', 'PlanningTD', 'PlanningVoyager',
            'ReasoningBase', 'ReasoningCOT', 'ReasoningCOTSC', 'ReasoningDILU', 'ReasoningIO', 'ReasoningSelfRefine', 'ReasoningStepBack', 'ReasoningTOT',
            'ReasoningCOTSimulation', 'ReasoningMultiStepSimulation', 'ReasoningSelfRefineSimulation',
