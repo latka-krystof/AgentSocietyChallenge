@@ -209,36 +209,10 @@ class ReasoningCOTSimulation(ReasoningBase):
     """
     def __call__(self, task_description: str, feedback: str = ''):
         examples, task_description = self.process_task_description(task_description)
-        prompt = '''Think through this step by step before writing your review:
+        # Minimal guidance - let the task_description do the heavy lifting
+        prompt = '''Think step by step: First consider your user profile and typical rating patterns, then analyze the business, and finally write a review that matches your style and rating.
 
-Step 1: Analyze your user profile and review history
-- What are your typical rating patterns?
-- What aspects do you usually focus on in reviews?
-- What is your review style (formal, casual, detailed, brief)?
-
-Step 2: Analyze the business
-- What are the key attributes of this business?
-- What stands out (positively or negatively)?
-- How does this compare to similar businesses you've reviewed?
-
-Step 3: Consider similar reviews
-- What did other users highlight?
-- Are there common themes or concerns?
-
-Step 4: Determine your rating
-- Based on your profile, the business attributes, and your typical rating patterns, what rating would you give?
-- Consider: Does this business meet, exceed, or fall short of your expectations?
-
-Step 5: Write your review
-- Match your typical review style
-- Focus on specific aspects that matter to you
-- Be consistent with your rating (positive rating = positive review, negative rating = negative review)
-
-{task_description}
-
-IMPORTANT: Your final output MUST be in exactly this format (no other text before or after):
-stars: [rating number: 1.0, 2.0, 3.0, 4.0, or 5.0]
-review: [your review text]'''
+{task_description}'''
         
         messages = [{"role": "user", "content": prompt}]
         reasoning_result = self.llm(
@@ -258,11 +232,11 @@ class ReasoningMultiStepSimulation(ReasoningBase):
         examples, task_description = self.process_task_description(task_description)
         
         # Step 1: Predict rating first
-        rating_prompt = f'''First, determine what rating you would give. Think step by step based on your profile and the business information.
+        rating_prompt = f'''Based on the information below, determine what rating you would give (1.0, 2.0, 3.0, 4.0, or 5.0).
 
 {task_description}
 
-Output ONLY the rating number (1.0, 2.0, 3.0, 4.0, or 5.0) in this format:
+Output ONLY in this format:
 stars: [rating]'''
         
         messages = [{"role": "user", "content": rating_prompt}]
@@ -283,13 +257,9 @@ stars: [rating]'''
             predicted_stars = max(1.0, min(5.0, predicted_stars))  # Clamp to 1-5
         
         # Step 2: Generate review based on predicted rating
-        review_prompt = f'''You have decided to give this business a {predicted_stars}-star rating. Now write a review that is consistent with this rating.
+        review_prompt = f'''You have decided to give this business a {predicted_stars}-star rating. Write a review that is consistent with this {predicted_stars}-star rating.
 
-{task_description}
-
-IMPORTANT: Your output MUST be in exactly this format (no other text before or after):
-stars: {predicted_stars}
-review: [your review text]'''
+{task_description}'''
         
         messages = [{"role": "user", "content": review_prompt}]
         review_result = self.llm(
@@ -335,13 +305,9 @@ class ReasoningSelfRefineSimulation(ReasoningBase):
     def __call__(self, task_description: str, feedback: str = ''):
         examples, task_description = self.process_task_description(task_description)
         
-        # Initial generation
+        # Initial generation - keep it simple like baseline
         initial_prompt = f'''
-{task_description}
-
-IMPORTANT: Your output MUST be in exactly this format (no other text before or after):
-stars: [rating number: 1.0, 2.0, 3.0, 4.0, or 5.0]
-review: [your review text]'''
+{task_description}'''
         
         messages = [{"role": "user", "content": initial_prompt}]
         initial_result = self.llm(
@@ -350,28 +316,13 @@ review: [your review text]'''
             max_tokens=1000
         )
         
-        # Self-refinement with consistency checking
-        refine_prompt = f'''Review the following rating and review for consistency and quality:
+        # Self-refinement with consistency checking - keep it minimal
+        refine_prompt = f'''Check if the review sentiment matches the rating. If inconsistent, provide a revised version. Otherwise, keep the original.
 
 Initial Output:
 {initial_result}
 
-Task Context:
-{task_description}
-
-Check for:
-1. Consistency: Does the review sentiment match the rating?
-   - 4-5 stars should have positive/enthusiastic review
-   - 1-2 stars should have negative/critical review
-   - 3 stars should have balanced/mixed review
-2. Style consistency: Does the review match the user's typical style?
-3. Rating appropriateness: Is the rating consistent with the user's typical patterns?
-
-If there are inconsistencies, provide a revised version. Otherwise, confirm the original is good.
-
-IMPORTANT: Your output MUST be in exactly this format (no other text before or after):
-stars: [rating number: 1.0, 2.0, 3.0, 4.0, or 5.0]
-review: [review text]'''
+{task_description}'''
         
         messages = [{"role": "user", "content": refine_prompt}]
         refined_result = self.llm(
@@ -380,25 +331,7 @@ review: [review text]'''
             max_tokens=1000
         )
         
-        # Post-process to ensure correct format
-        return self._ensure_format(refined_result)
-    
-    def _ensure_format(self, result: str) -> str:
-        """Ensure the result is in the correct format: stars: X\nreview: Y"""
-        import re
-        stars_match = re.search(r'stars?[:\s]+([1-5](?:\.0)?)', result, re.IGNORECASE)
-        review_match = re.search(r'review[:\s]+(.+?)(?:\n\n|\Z)', result, re.IGNORECASE | re.DOTALL)
-        
-        if stars_match and review_match:
-            stars = stars_match.group(1)
-            review = review_match.group(1).strip()
-            return f'stars: {stars}\nreview: {review}'
-        elif stars_match:
-            review_part = result.split('review:', 1)[-1] if 'review:' in result.lower() else result.split('stars:', 1)[-1].split(':', 1)[-1] if ':' in result else ''
-            return f'stars: {stars_match.group(1)}\nreview: {review_part.strip()}'
-        else:
-            return result
-
+        return refined_result
 
 class ReasoningStepBackSimulation(ReasoningBase):
     """
@@ -427,17 +360,12 @@ Task context:
             max_tokens=300
         )
         
-        # Step 2: Apply principles
-        apply_prompt = f'''Apply these principles to write your review:
+        # Step 2: Apply principles - minimal
+        apply_prompt = f'''Apply these principles:
 
-Principles:
 {principles}
 
-{task_description}
-
-IMPORTANT: Your output MUST be in exactly this format (no other text before or after):
-stars: [rating number: 1.0, 2.0, 3.0, 4.0, or 5.0]
-review: [your review text]'''
+{task_description}'''
         
         messages = [{"role": "user", "content": apply_prompt}]
         reasoning_result = self.llm(
@@ -446,25 +374,7 @@ review: [your review text]'''
             max_tokens=1000
         )
         
-        # Post-process to ensure correct format
-        return self._ensure_format(reasoning_result)
-    
-    def _ensure_format(self, result: str) -> str:
-        """Ensure the result is in the correct format: stars: X\nreview: Y"""
-        import re
-        stars_match = re.search(r'stars?[:\s]+([1-5](?:\.0)?)', result, re.IGNORECASE)
-        review_match = re.search(r'review[:\s]+(.+?)(?:\n\n|\Z)', result, re.IGNORECASE | re.DOTALL)
-        
-        if stars_match and review_match:
-            stars = stars_match.group(1)
-            review = review_match.group(1).strip()
-            return f'stars: {stars}\nreview: {review}'
-        elif stars_match:
-            review_part = result.split('review:', 1)[-1] if 'review:' in result.lower() else result.split('stars:', 1)[-1].split(':', 1)[-1] if ':' in result else ''
-            return f'stars: {stars_match.group(1)}\nreview: {review_part.strip()}'
-        else:
-            return result
-
+        return reasoning_result
 
 class ReasoningCOTWithReflection(ReasoningBase):
     """
@@ -474,30 +384,10 @@ class ReasoningCOTWithReflection(ReasoningBase):
     def __call__(self, task_description: str, feedback: str = ''):
         examples, task_description = self.process_task_description(task_description)
         
-        # Initial COT reasoning
-        cot_prompt = '''Think through this step by step:
+        # Initial COT reasoning - minimal guidance
+        cot_prompt = '''Think step by step: consider your profile, analyze the business, determine rating, then write review.
 
-Step 1: Analyze your user profile and review history
-- What are your typical rating patterns?
-- What aspects do you usually focus on in reviews?
-- What is your review style?
-
-Step 2: Analyze the business
-- What are the key attributes?
-- What stands out (positively or negatively)?
-
-Step 3: Determine your rating
-- Based on your profile and the business, what rating would you give?
-
-Step 4: Write your review
-- Match your typical review style
-- Be consistent with your rating
-
-{task_description}
-
-IMPORTANT: Your output MUST be in exactly this format (no other text before or after):
-stars: [rating number: 1.0, 2.0, 3.0, 4.0, or 5.0]
-review: [your review text]'''
+{task_description}'''
         
         messages = [{"role": "user", "content": cot_prompt}]
         initial_result = self.llm(
@@ -506,25 +396,13 @@ review: [your review text]'''
             max_tokens=1000
         )
         
-        # Reflection
-        reflection_prompt = f'''Reflect on your initial response:
+        # Reflection - minimal and focused
+        reflection_prompt = f'''Check if the review sentiment matches the rating and if it's consistent with your profile. If not, revise.
 
 Initial Response:
 {initial_result}
 
-Task Context:
-{task_description}
-
-Questions to consider:
-1. Is the rating consistent with your typical patterns?
-2. Does the review sentiment match the rating?
-3. Does the review style match your historical reviews?
-
-If you identify any issues, provide a revised version. Otherwise, confirm the original is good.
-
-IMPORTANT: Your output MUST be in exactly this format (no other text before or after):
-stars: [rating number: 1.0, 2.0, 3.0, 4.0, or 5.0]
-review: [review text]'''
+{task_description}'''
         
         messages = [{"role": "user", "content": reflection_prompt}]
         final_result = self.llm(
@@ -532,23 +410,6 @@ review: [review text]'''
             temperature=0.0,
             max_tokens=1000
         )
-        
-        # Post-process to ensure correct format
-        return self._ensure_format(final_result)
-    
-    def _ensure_format(self, result: str) -> str:
-        """Ensure the result is in the correct format: stars: X\nreview: Y"""
-        import re
-        stars_match = re.search(r'stars?[:\s]+([1-5](?:\.0)?)', result, re.IGNORECASE)
-        review_match = re.search(r'review[:\s]+(.+?)(?:\n\n|\Z)', result, re.IGNORECASE | re.DOTALL)
-        
-        if stars_match and review_match:
-            stars = stars_match.group(1)
-            review = review_match.group(1).strip()
-            return f'stars: {stars}\nreview: {review}'
-        elif stars_match:
-            review_part = result.split('review:', 1)[-1] if 'review:' in result.lower() else result.split('stars:', 1)[-1].split(':', 1)[-1] if ':' in result else ''
-            return f'stars: {stars_match.group(1)}\nreview: {review_part.strip()}'
-        else:
-            return result
+
+        return final_result
 
