@@ -402,7 +402,11 @@ class ReasoningCOTWithReflection(ReasoningBase):
 Initial Response:
 {initial_result}
 
-{task_description}'''
+{task_description}
+
+Format your response exactly as follows:
+stars: [your rating]
+review: [your review]'''
         
         messages = [{"role": "user", "content": reflection_prompt}]
         final_result = self.llm(
