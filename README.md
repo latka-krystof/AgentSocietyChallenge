@@ -1,50 +1,25 @@
-<div style="text-align: center; display: flex; align-items: center; justify-content: center; background-color: white; padding: 20px; border-radius: 30px;">
-  <img src="./static/ASC.jpg" alt="AgentSociety Challenge Logo" width="100" style="margin-right: 20px; border-radius: 10%;">
-  <h1 style="color: black; margin: 0; font-size: 2em;">WWW'25 AgentSociety Challenge: WebSocietySimulator</h1>
-</div>
+# CS245 Team 7 -- AgentSociety Challenge Extension
 
-# 🚀 AgentSociety Challenge
-![License](https://img.shields.io/badge/license-MIT-green) &ensp;
-[![Competition Link](https://img.shields.io/badge/competition-link-orange)](https://www.codabench.org/competitions/4574/) &ensp;
-[![arXiv](https://img.shields.io/badge/arXiv-2502.18754-b31b1b.svg)](https://arxiv.org/abs/2502.18754)
-
-Welcome to the **WWW'25 AgentSociety Challenge**! This repository provides the tools and framework needed to participate in a competition that focuses on building **LLM Agents** for **user behavior simulation** and **recommendation systems** based on open source datasets.
-
-Participants are tasked with developing intelligent agents that interact with a simulated environment and perform specific tasks in two competition tracks:
-1. **User Behavior Simulation Track**: Agents simulate user behavior, including generating reviews and ratings.
-2. **Recommendation Track**: Agents generate recommendations based on provided contextual data.
-
-This repository includes:
-- The core library `websocietysimulator` for environment simulation.
-- Scripts for dataset processing and analysis.
-- Example usage for creating and evaluating agents.
-
----
+This repository contains our implementation of LLM agents for user behavior simulation, developed as part of a class project. The agents combine different strategies including **memory**, **planning**, and **reasoning** to simulate realistic user behavior on review platforms.
 
 ## Directory Structure
 
-### 1. **`websocietysimulator/`**  
-This is the core library containing all source code required for the competition.
-
-- **`agents/`**: Contains base agent classes (`SimulationAgent`, `RecommendationAgent`) and their abstractions. Participants must extend these classes for their implementations.
-- **`task/`**: Defines task structures for each track (`SimulationTask`, `RecommendationTask`).
-- **`llm/`**: Contains base LLM client classes (`DeepseekLLM`, `OpenAILLM`).
-- **`tools/`**: Includes utility tools:
-  - `InteractionTool`: A utility for interacting with the Yelp dataset during simulations.
-  - `EvaluationTool`: Provides comprehensive metrics for both recommendation (HR@1/3/5) and simulation tasks (RMSE, sentiment analysis).
-- **`simulator.py`**: The main simulation framework, which handles task and groundtruth setting, evaluation and agent execution.
-
-### 2. **`example/`**  
-Contains usage examples of the `websocietysimulator` library. Includes sample agents and scripts to demonstrate how to load scenarios, set agents, and evaluate them.
-
-### 3. **`data_process.py`**  
-A script to process the raw Yelp dataset into the required format for use with the `websocietysimulator` library. This script ensures the dataset is cleaned and structured correctly for simulations.
+- **`websocietysimulator/`**: Core library containing the simulation framework, agent base classes, LLM clients, and evaluation tools.
+- **`agents/`**: Contains our agent implementations:
+  - `ModelingAgent_memory_planning_and_reasoning.py` - **Final combined agent** (Memory + Planning + Reasoning)
+  - `ModelingAgent_baseline.py` - Baseline agent
+  - `ModelingAgent_planning.py` - Planning-only agent
+  - `ModelingAgent_planning_and_reasoning.py` - Planning + Reasoning agent
+  - `ModelingAgent_memory_and_reasoning.py` - Memory + Reasoning agent
+  - `ModelingAgent_memory.py` - Memory-only agent
+  - `ModelingAgent_reasoning.py` - Reasoning-only agent
+- **`data_process.py`**: Script to process raw Yelp/Amazon/Goodreads datasets into the required format.
 
 ---
 
-## Quick Start
+## Setup Instructions
 
-### 1. Install the Library
+### 1. Install Dependencies
 
 The repository is organized using [Python Poetry](https://python-poetry.org/). Follow these steps to install the library:
 
@@ -55,171 +30,233 @@ The repository is organized using [Python Poetry](https://python-poetry.org/). F
    ```
 
 2. Install dependencies:
-  - Option 1: Install dependencies using Poetry: (Recommended)
-    ```bash
-    poetry install  && \
-    poetry shell
-    ```
-  - Option 2: Install dependencies using pip(COMING SOON):
-    ```bash
-    pip install websocietysimulator
-    ```
-  - Option 3: Install dependencies using conda:
-    ```bash
-    conda create -n websocietysimulator python=3.11 && \
-    conda activate websocietysimulator && \
-    pip install -r requirements.txt && \
-    pip install .
-    ```
+   - **Option 1: Install dependencies using Poetry** :
+     ```bash
+     poetry install && \
+     poetry shell
+     ```
+   - **Option 2: Install dependencies using pip** :
+     ```bash
+     pip install websocietysimulator
+     ```
+   - **Option 3: Install dependencies using conda**:
+     ```bash
+     conda create -n websocietysimulator python=3.11 && \
+     conda activate websocietysimulator && \
+     pip install -r requirements.txt && \
+     pip install .
+     ```
 
 3. Verify the installation:
    ```python
    import websocietysimulator
    ```
 
----
+### 2. Google Cloud Authentication
 
-### 2. Data Preparation
+Our agents use Google Cloud Vertex AI (Gemini 2.5 Pro) for LLM inference. You need to:
 
-1. Download the raw dataset from the Yelp[1], Amazon[2] or Goodreads[3].
-2. Run the `data_process.py` script to process the dataset:
+1. **Authenticate with Google Cloud**:
    ```bash
-   python data_process.py --input <path_to_raw_dataset> --output <path_to_processed_dataset>
+   gcloud auth application-default login
    ```
-- Check out the [Data Preparation Guide](./tutorials/data_preparation.md) for more information.
-- **NOTICE: You Need at least 16GB RAM to process the dataset.**
+
+2. **Set your GCP project**:
+   ```bash
+   gcloud config set project YOUR_PROJECT_ID
+   ```
+   Replace `YOUR_PROJECT_ID` with your actual Google Cloud project ID.
+
+3. **Set the environment variable**:
+   
+   **Temporary (current session only)**:
+   ```bash
+   export GCP_PROJECT_ID=YOUR_PROJECT_ID
+   ```
+   
+   **Permanent (add to your shell profile)**:
+   
+   For bash:
+   ```bash
+   echo 'export GCP_PROJECT_ID=YOUR_PROJECT_ID' >> ~/.bashrc
+   source ~/.bashrc
+   ```
+   
+   For zsh:
+   ```bash
+   echo 'export GCP_PROJECT_ID=YOUR_PROJECT_ID' >> ~/.zshrc
+   source ~/.zshrc
+   ```
+   
+   **For conda environment** (recommended):
+   ```bash
+   conda env config vars set GCP_PROJECT_ID=YOUR_PROJECT_ID -n websocietysimulator
+   conda activate websocietysimulator
+   ```
+
+4. **Verify authentication**:
+   ```bash
+   echo $GCP_PROJECT_ID
+   gcloud auth application-default print-access-token
+   ```
+
+### 3. Data Preparation
+
+1. Download the raw Yelp dataset from [Yelp Dataset](https://www.yelp.com/dataset).
+
+2. Extract the dataset:
+   ```bash
+   tar -xvf yelp_dataset.tar
+   ```
+
+3. Process the dataset:
+   ```bash
+   python data_process.py --input <path_to_raw_dataset> --output ./dataset --yelp_only
+   ```
+   
+   The `--yelp_only` flag processes only Yelp data (Amazon and Goodreads files are optional).
+
+4. Verify the processed dataset structure:
+   ```
+   ./dataset/
+   ├── item.json
+   ├── review.json
+   └── user.json
+   ```
 
 ---
 
-### 3. Organize Your Data
+## Running the Agents
 
-Ensure the dataset is organized in a directory structure similar to this:
+### Running the Final Combined Agent
+
+The final agent (`ModelingAgent_memory_planning_and_reasoning.py`) combines memory, planning, and reasoning strategies. It will automatically run comparisons against all other agents:
+
+```bash
+conda activate websocietysimulator
+export GCP_PROJECT_ID=YOUR_PROJECT_ID  # If not set permanently
+python agents/ModelingAgent_memory_planning_and_reasoning.py
+```
+
+This will:
+1. Run the combined agent (Memory + Planning + Reasoning)
+2. Run all comparison agents:
+   - Baseline
+   - Planning Only
+   - Planning + Reasoning
+   - Memory + Reasoning
+   - Memory Only
+   - Reasoning Only
+3. Generate evaluation results for each agent
+4. Display a comprehensive comparison summary
+
+### Running Individual Agents
+
+You can also run individual agents for testing:
+
+```bash
+# Baseline agent
+python agents/ModelingAgent_baseline.py
+
+# Planning-only agent
+python agents/ModelingAgent_planning.py
+
+# Planning + Reasoning agent
+python agents/ModelingAgent_planning_and_reasoning.py
+
+# Memory + Reasoning agent
+python agents/ModelingAgent_memory_and_reasoning.py
+```
+
+---
+
+## Viewing Results
+
+After running an agent, results are saved in timestamped directories:
 
 ```
-<your_dataset_directory>/
-├── item.json
-├── review.json
-├── user.json
+./memory_planning_reasoning_yelp_YYYYMMDD_HHMMSS/
+├── MemoryPlanningAndReasoning_outputs.json      # Agent outputs
+├── MemoryPlanningAndReasoning_evaluation.json   # Evaluation metrics
+├── Baseline_outputs.json
+├── Baseline_evaluation.json
+├── PlanningOnly_outputs.json
+├── PlanningOnly_evaluation.json
+└── ... (similar files for all agents)
 ```
 
-You can name the dataset directory whatever you prefer (e.g., `dataset/`).
+### Evaluation Metrics
 
----
+Each `*_evaluation.json` file contains:
+- **Preference Estimation**: How well the agent predicts user preferences
+- **Review Generation**: Quality of generated reviews
+- **Overall Quality**: Combined metric
 
-### 4. Develop Your Agent
+### Output Format
 
-Create a custom agent by extending either `SimulationAgent` or `RecommendationAgent`. Refer to the examples in the `example/` directory. Here's a quick template:
-
-```python
-from yelpsimulator.agents.simulation_agent import SimulationAgent
-
-class MySimulationAgent(SimulationAgent):
-    def workflow(self):
-        # The simulator will automatically set the task for your agent. You can access the task by `self.task` to get task information.
-        print(self.task)
-
-        # You can also use the `interaction_tool` to get data from the dataset.
-        # For example, you can get the user information by `interaction_tool.get_user(user_id="example_user_id")`.
-        # You can also get the item information by `interaction_tool.get_item(item_id="example_item_id")`.
-        # You can also get the reviews by `interaction_tool.get_reviews(review_id="example_review_id")`.
-        user_info = interaction_tool.get_user(user_id="example_user_id")
-
-        # Implement your logic here
-        
-        # Finally, you need to return the result in the format of `stars` and `review`.
-        # For recommendation track, you need to return a candidate list of items, in which the first item is the most recommended item.
-        stars = 4.0
-        review = "Great experience!"
-        return stars, review
+Each `*_outputs.json` file contains the agent's predictions:
+```json
+[
+  {
+    "task_id": "...",
+    "stars": 4.0,
+    "review": "Great experience! The service was excellent..."
+  },
+  ...
+]
 ```
 
-- Check out the [Tutorial](./tutorials/agent_development.md) for Agent Development.
-- Baseline User Behavior Simulation Agent: [Baseline User Behavior Simulation Agent](./example/ModelingAgent_baseline.py).
-- Baseline Recommendation Agent: [Baseline Recommendation Agent](./example/RecAgent_baseline.py).
----
+### Comparison Summary
 
-### 5. Evaluation your agent with training data
-
-Run the simulation using the provided `Simulator` class:
-
-```python
-from websocietysimulator import Simulator
-from my_agent import MySimulationAgent
-
-# Initialize Simulator
-simulator = Simulator(data_dir="path/to/your/dataset", device="auto", cache=False)
-# The cache parameter controls whether to use cache for interaction tool.
-# If you want to use cache, you can set cache=True. When using cache, the simulator will only load data into memory when it is needed, which saves a lot of memory.
-# If you want to use normal interaction tool, you can set cache=False. Notice that, normal interaction tool will load all data into memory at the beginning, which needs a lot of memory (20GB+).
-
-# Load scenarios
-simulator.set_task_and_groundtruth(task_dir="path/to/task_directory", groundtruth_dir="path/to/groundtruth_directory")
-
-# Set your custom agent
-simulator.set_agent(MySimulationAgent)
-
-# Set LLM client
-simulator.set_llm(DeepseekLLM(api_key="Your API Key"))
-
-# Run evaluation
-# If you don't set the number of tasks, the simulator will run all tasks.
-agent_outputs = simulator.run_simulation(number_of_tasks=None, enable_threading=True, max_workers=10)
-
-# Evaluate the agent
-evaluation_results = simulator.evaluate()
-```
-- If you want to use your own LLMClient, you can easily implement it by inheriting the `LLMBase` class. Refer to the [Tutorial](./tutorials/agent_development.md) for more information.
+The script automatically prints a comparison summary showing:
+- Metrics for each agent strategy
+- Improvements vs baseline
+- Comparison of combined strategies
 
 ---
 
-### 6. Submit your agent
-- You should register your team firstly in the competition homepage ([Homepage](https://tsinghua-fib-lab.github.io/AgentSocietyChallenge)).
-- Submit your solution through the submission button at the specific track page. (the submission button is at the top right corner of the page)
-  - [User Modeling Track](https://tsinghua-fib-lab.github.io/AgentSocietyChallenge/pages/behavior-track.html)
-  - [Recommendation Track](https://tsinghua-fib-lab.github.io/AgentSocietyChallenge/pages/recommendation-track.html)
-  - Please register your team first.
-  - When you submit your agent, please carefully **SELECT the TRACK you want to submit to.**
-- **The content of your submission should be a .py file containing your agent (Only one `{your_team}.py` file without evaluation code).**
-- Example submissions:
-  - For Track 1: [submission_1](example/trackOneSubmission_example.zip)
-  - For Track 2: [submission_2](example/trackTwoSubmission_example.zip)
+## Agent Architecture
+
+### Final Combined Agent (Memory + Planning + Reasoning)
+
+Our final agent combines three key components:
+
+1. **Planning Module** (`PlanningOnlyModule`): 
+   - Creates a deterministic plan for gathering context
+   - Executes structured steps: fetch user, business, reviews
+
+2. **Memory Module** (`MemoryUserProfile`):
+   - Stores and retrieves relevant reviews from memory
+   - Builds user preference profiles
+
+3. **Reasoning Module** (`ReasoningCOTWithReflection`):
+   - Uses Chain of Thought with reflection
+   - Determines rating and generates review text based on gathered context
+
+The agent workflow:
+1. Executes the planning structure to gather data
+2. Stores item reviews in memory during execution
+3. Retrieves similar reviews from memory
+4. Uses the reasoning module to determine rating and generate review
+5. Returns both rating and review text
 
 ---
 
-## Introduction to the `InteractionTool`
+## Requirements
 
-The `InteractionTool` is the core utility for interacting with the dataset. It provides an interface for querying user, item, and review data.
+- Python 3.11
+- Google Cloud account with Vertex AI API enabled
+- At least 16GB RAM for dataset processing
+- Processed Yelp dataset in `./dataset/` directory
 
-### Functions
-
-- **Get User Information**:
-  Retrieve user data by user ID or current scenario context.
-  ```python
-  user_info = interaction_tool.get_user(user_id="example_user_id")
-  ```
-
-- **Get Item Information**:
-  Retrieve item data by item ID or current scenario context.
-  ```python
-  item_info = interaction_tool.get_item(item_id="example_item_id")
-  ```
-
-- **Get Reviews**:
-  Fetch reviews related to a specific item or user, filtered by time.
-  ```python
-  reviews = interaction_tool.get_reviews(review_id="example_review_id")  # Fetch a specific review
-  reviews = interaction_tool.get_reviews(item_id="example_item_id")  # Fetch all reviews for a specific item
-  reviews = interaction_tool.get_reviews(user_id="example_user_id")  # Fetch all reviews for a specific user
-  ```
+---
 
 ## License
 
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+This project is licensed under the MIT License.
 
 ## References
 
-[1] Yelp Dataset: https://www.yelp.com/dataset
-
-[2] Amazon Dataset: https://amazon-reviews-2023.github.io/
-
-[3] Goodreads Dataset: https://sites.google.com/eng.ucsd.edu/ucsdbookgraph/home
+- [Yelp Dataset](https://www.yelp.com/dataset)
+- [Amazon Dataset](https://amazon-reviews-2023.github.io/)
+- [Goodreads Dataset](https://sites.google.com/eng.ucsd.edu/ucsdbookgraph/home)

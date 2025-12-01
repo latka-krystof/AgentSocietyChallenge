@@ -60,15 +60,18 @@ def filter_data(top_cities, business_df, user_df, review_df):
     # Save filtered data in JSON format
     return filtered_businesses, filtered_reviews, filtered_users
 
-def check_required_files(input_dir):
-    """Check if all required files exist in the input directory."""
-    all_required_files = REQUIRED_FILES_YELP + REQUIRED_FILES_AMAZON + REQUIRED_FILES_GOODREADS
+def check_required_files(input_dir, yelp_only=False):
+    """Check if required files exist in the input directory."""
+    if yelp_only:
+        required = REQUIRED_FILES_YELP
+    else:
+        required = REQUIRED_FILES_YELP + REQUIRED_FILES_AMAZON + REQUIRED_FILES_GOODREADS
     missing_files = []
-    
-    for file in all_required_files:
+
+    for file in required:
         if not os.path.exists(os.path.join(input_dir, file)):
             missing_files.append(file)
-    
+
     if missing_files:
         print("Error: Missing required files:")
         for file in missing_files:
@@ -136,7 +139,7 @@ def load_and_process_goodreads_data(input_dir):
     
     return all_books, all_reviews
 
-def merge_business_data(yelp_business, amazon_meta, goodreads_books, output_file=None):
+def merge_business_data(yelp_business, amazon_meta=None, goodreads_books=None, output_file=None):
     """Merge business data from all sources while preserving source-specific columns."""
     logging.info("Merging business data for business...")
     
@@ -148,24 +151,21 @@ def merge_business_data(yelp_business, amazon_meta, goodreads_books, output_file
     yelp_business['type'] = 'business'
     yelp_json = json.loads(yelp_business.to_json(orient='records'))
     
-    # 将Amazon数据转换为json格式
-    amazon_business = amazon_meta.rename(columns={
-        'parent_asin': 'item_id'
-    })
-    amazon_business['source'] = 'amazon'
-    amazon_business['type'] = 'product'
-    amazon_json = json.loads(amazon_business.to_json(orient='records'))
-    
-    # 将Goodreads数据转换为json格式
-    goodreads_business = goodreads_books.rename(columns={
-        'book_id': 'item_id', 
-    })
-    goodreads_business['source'] = 'goodreads'
-    goodreads_business['type'] = 'book'
-    goodreads_json = json.loads(goodreads_business.to_json(orient='records'))
-    
-    # 合并所有json数据
-    merged_json = yelp_json + amazon_json + goodreads_json
+    merged_json = list(yelp_json)
+
+    if amazon_meta is not None:
+        amazon_business = amazon_meta.rename(columns={'parent_asin': 'item_id'})
+        amazon_business['source'] = 'amazon'
+        amazon_business['type'] = 'product'
+        amazon_json = json.loads(amazon_business.to_json(orient='records'))
+        merged_json += amazon_json
+
+    if goodreads_books is not None:
+        goodreads_business = goodreads_books.rename(columns={'book_id': 'item_id'})
+        goodreads_business['source'] = 'goodreads'
+        goodreads_business['type'] = 'book'
+        goodreads_json = json.loads(goodreads_business.to_json(orient='records'))
+        merged_json += goodreads_json
     
     # 如果指定了输出文件，则保存
     if output_file:
@@ -174,7 +174,7 @@ def merge_business_data(yelp_business, amazon_meta, goodreads_books, output_file
             for item in merged_json:
                 f.write(json.dumps(item) + '\n')
 
-def merge_review_data(yelp_reviews, amazon_reviews, goodreads_reviews, output_file=None):
+def merge_review_data(yelp_reviews, amazon_reviews=None, goodreads_reviews=None, output_file=None):
     """Merge review data from all sources while preserving source-specific columns."""
     logging.info("Merging review data for reviews...")
     
@@ -186,29 +186,30 @@ def merge_review_data(yelp_reviews, amazon_reviews, goodreads_reviews, output_fi
     yelp_reviews['type'] = 'business'
     yelp_json = json.loads(yelp_reviews.to_json(orient='records'))
     
-    # 将Amazon评论转换为json格式
-    amazon_reviews = amazon_reviews.rename(columns={
-        'asin': 'sub_item_id',
-        'parent_asin': 'item_id',
-        'rating': 'stars',
-    })
-    amazon_reviews['review_id'] = [str(uuid.uuid4()) for _ in range(len(amazon_reviews))]
-    amazon_reviews['source'] = 'amazon'
-    amazon_reviews['type'] = 'product'
-    amazon_json = json.loads(amazon_reviews.to_json(orient='records'))
-    
-    # 将Goodreads评论转换为json格式
-    goodreads_reviews = goodreads_reviews.rename(columns={
-        'book_id': 'item_id',
-        'rating': 'stars',
-        'review_text': 'text',
-    })
-    goodreads_reviews['source'] = 'goodreads'
-    goodreads_reviews['type'] = 'book'
-    goodreads_json = json.loads(goodreads_reviews.to_json(orient='records'))
-    
-    # 合并所有json数据
-    merged_json = yelp_json + amazon_json + goodreads_json
+    merged_json = list(yelp_json)
+
+    if amazon_reviews is not None:
+        amazon_reviews = amazon_reviews.rename(columns={
+            'asin': 'sub_item_id',
+            'parent_asin': 'item_id',
+            'rating': 'stars',
+        })
+        amazon_reviews['review_id'] = [str(uuid.uuid4()) for _ in range(len(amazon_reviews))]
+        amazon_reviews['source'] = 'amazon'
+        amazon_reviews['type'] = 'product'
+        amazon_json = json.loads(amazon_reviews.to_json(orient='records'))
+        merged_json += amazon_json
+
+    if goodreads_reviews is not None:
+        goodreads_reviews = goodreads_reviews.rename(columns={
+            'book_id': 'item_id',
+            'rating': 'stars',
+            'review_text': 'text',
+        })
+        goodreads_reviews['source'] = 'goodreads'
+        goodreads_reviews['type'] = 'book'
+        goodreads_json = json.loads(goodreads_reviews.to_json(orient='records'))
+        merged_json += goodreads_json
     
     # 如果指定了输出文件，则保存
     if output_file:
@@ -217,7 +218,7 @@ def merge_review_data(yelp_reviews, amazon_reviews, goodreads_reviews, output_fi
             for item in merged_json:
                 f.write(json.dumps(item) + '\n')
 
-def create_unified_users(yelp_users, amazon_reviews, goodreads_reviews, output_file=None):
+def create_unified_users(yelp_users, amazon_reviews=None, goodreads_reviews=None, output_file=None):
     """Create unified user data while preserving Yelp-specific user information."""
     logging.info("Merging users...")
     
@@ -225,22 +226,23 @@ def create_unified_users(yelp_users, amazon_reviews, goodreads_reviews, output_f
     yelp_users['source'] = 'yelp'
     yelp_json = json.loads(yelp_users.to_json(orient='records'))
     
-    # 创建Amazon用户数据并转换为json格式
-    amazon_users = pd.DataFrame({
-        'user_id': amazon_reviews['user_id'].unique(),
-        'source': 'amazon'
-    })
-    amazon_json = json.loads(amazon_users.to_json(orient='records'))
-    
-    # 创建Goodreads用户数据并转换为json格式
-    goodreads_users = pd.DataFrame({
-        'user_id': goodreads_reviews['user_id'].unique(),
-        'source': 'goodreads'
-    })
-    goodreads_json = json.loads(goodreads_users.to_json(orient='records'))
-    
-    # 合并所有json数据
-    merged_json = yelp_json + amazon_json + goodreads_json
+    merged_json = list(yelp_json)
+
+    if amazon_reviews is not None:
+        amazon_users = pd.DataFrame({
+            'user_id': amazon_reviews['user_id'].unique(),
+            'source': 'amazon'
+        })
+        amazon_json = json.loads(amazon_users.to_json(orient='records'))
+        merged_json += amazon_json
+
+    if goodreads_reviews is not None:
+        goodreads_users = pd.DataFrame({
+            'user_id': goodreads_reviews['user_id'].unique(),
+            'source': 'goodreads'
+        })
+        goodreads_json = json.loads(goodreads_users.to_json(orient='records'))
+        merged_json += goodreads_json
     
     # 如果指定了输出文件，则保存
     if output_file:
@@ -254,20 +256,25 @@ def main():
     parser = argparse.ArgumentParser(description="Process multiple datasets for analysis.")
     parser.add_argument('--input_dir', required=True, help="Path to the input directory containing all dataset files.")
     parser.add_argument('--output_dir', required=True, help="Path to the output directory for saving processed data.")
+    parser.add_argument(
+        '--yelp_only',
+        action='store_true',
+        help="If set, only process Yelp data (skip Amazon/Goodreads requirements)."
+    )
     args = parser.parse_args()
 
     # Check required files
-    if not check_required_files(args.input_dir):
+    if not check_required_files(args.input_dir, args.yelp_only):
         return
 
     # Process Yelp data
     filtered_businesses, filtered_reviews, filtered_users = load_and_process_yelp_data(args.input_dir)
     
-    # Process Amazon data
-    amazon_reviews, amazon_meta = load_and_process_amazon_data(args.input_dir)
-    
-    # Process Goodreads data
-    goodreads_books, goodreads_reviews = load_and_process_goodreads_data(args.input_dir)
+    amazon_reviews = amazon_meta = None
+    goodreads_books = goodreads_reviews = None
+    if not args.yelp_only:
+        amazon_reviews, amazon_meta = load_and_process_amazon_data(args.input_dir)
+        goodreads_books, goodreads_reviews = load_and_process_goodreads_data(args.input_dir)
     
     # Merge all data
     os.makedirs(args.output_dir, exist_ok=True)
