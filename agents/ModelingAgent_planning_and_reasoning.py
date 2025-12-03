@@ -24,7 +24,7 @@ repo_root = Path(__file__).parent.parent
 if str(repo_root) not in sys.path:
     sys.path.insert(0, str(repo_root))
 
-from example.ModelingAgent_planning import PlanningOnlyModule, STOPWORDS
+from agents.ModelingAgent_planning import PlanningOnlyModule, STOPWORDS
 
 
 class PlanningAndReasoningSimulationAgent(SimulationAgent):
@@ -236,7 +236,7 @@ class PlanningAndReasoningSimulationAgent(SimulationAgent):
             sentiment_line = "I ran into enough friction that I'd steer friends elsewhere until things tighten up."
 
         # Import the helper from planning-only agent
-        from example.ModelingAgent_planning import PlanningOnlySimulationAgent
+        from agents.ModelingAgent_planning import PlanningOnlySimulationAgent
         evidence_line = PlanningOnlySimulationAgent._build_evidence_line(item_reviews, user_reviews, themes)
 
         closing_line = (
@@ -283,7 +283,7 @@ if __name__ == "__main__":
     from websocietysimulator import Simulator
     from websocietysimulator.llm.vertex_ai_llm import VertexAILLM
     
-    # Add parent directory to path so we can import from example module
+    # Add parent directory to path so we can import from agents module
     repo_root = Path(__file__).parent.parent
     if str(repo_root) not in sys.path:
         sys.path.insert(0, str(repo_root))
@@ -291,7 +291,7 @@ if __name__ == "__main__":
     logging.getLogger().setLevel(logging.INFO)
 
     task_set = "yelp"
-    num_tasks = 10
+    num_tasks = 100
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     results_dir = Path(f"./planning_and_reasoning_{task_set}_{timestamp}")
     results_dir.mkdir(parents=True, exist_ok=True)
@@ -299,8 +299,8 @@ if __name__ == "__main__":
 
     simulator = Simulator(data_dir="./dataset", device="auto", cache=False)
     simulator.set_task_and_groundtruth(
-        task_dir=f"./example/track1/{task_set}/tasks",
-        groundtruth_dir=f"./example/track1/{task_set}/groundtruth",
+        task_dir=f"./agents/track1/{task_set}/tasks",
+        groundtruth_dir=f"./agents/track1/{task_set}/groundtruth",
     )
 
     simulator.set_llm(
@@ -318,13 +318,13 @@ if __name__ == "__main__":
     ]
 
     try:
-        from example.ModelingAgent_planning import PlanningOnlySimulationAgent
+        from agents.ModelingAgent_planning import PlanningOnlySimulationAgent
         strategies.append(("PlanningOnly", PlanningOnlySimulationAgent))
     except Exception as import_error:
         logger.warning("Could not import planning-only agent: %s", import_error)
 
     try:
-        from example.ModelingAgent_baseline import MySimulationAgent as BaselineSimulationAgent
+        from agents.ModelingAgent_baseline import MySimulationAgent as BaselineSimulationAgent
         strategies.append(("Baseline", BaselineSimulationAgent))
     except Exception as import_error:
         logger.warning("Could not import baseline agent: %s", import_error)

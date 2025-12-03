@@ -245,7 +245,7 @@ if __name__ == "__main__":
     
     # Set the data
     task_set = "yelp"  # "goodreads" or "amazon" or "yelp"
-    num_tasks = 10  # Number of tasks to run for each strategy
+    num_tasks = 100  # Number of tasks to run for each strategy
     
     # Create results folder
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
@@ -256,8 +256,8 @@ if __name__ == "__main__":
     # Initialize simulator once
     simulator = Simulator(data_dir="./dataset", device="auto", cache=False)
     simulator.set_task_and_groundtruth(
-        task_dir=f"./example/track1/{task_set}/tasks", 
-        groundtruth_dir=f"./example/track1/{task_set}/groundtruth"
+        task_dir=f"./agents/track1/{task_set}/tasks", 
+        groundtruth_dir=f"./agents/track1/{task_set}/groundtruth"
     )
     
     # Set LLM once (shared across all strategies)
