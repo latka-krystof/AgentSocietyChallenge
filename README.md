@@ -1,5 +1,7 @@
 # CS245 Team 7 -- AgentSociety Challenge Extension
 
+Activate Python env with the following command: 'source .venv/bin/activate'
+
 This repository contains our implementation of LLM agents for user behavior simulation, developed as part of a class project. The agents combine different strategies including **memory**, **planning**, and **reasoning** to simulate realistic user behavior on review platforms.
 
 ## Directory Structure

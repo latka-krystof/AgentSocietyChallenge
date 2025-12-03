@@ -20,3 +20,4 @@ dataset/
 *.json
 !final_evaluations/*.json
 .gcp-credentials/
+.venv*/

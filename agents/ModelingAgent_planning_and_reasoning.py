@@ -7,6 +7,9 @@ from collections import Counter
 from statistics import mean
 from typing import Any, Dict, List
 
+import nltk
+from nltk.sentiment import SentimentIntensityAnalyzer
+
 from websocietysimulator.agent import SimulationAgent
 from websocietysimulator.agent.modules.planning_modules import PlanningBase
 from websocietysimulator.agent.modules.reasoning_modules import ReasoningCOTWithReflection
@@ -42,6 +45,10 @@ class PlanningAndReasoningSimulationAgent(SimulationAgent):
         super().__init__(llm=llm)
         self.planning = PlanningOnlyModule(llm=self.llm)
         self.reasoning = ReasoningCOTWithReflection(profile_type_prompt='', memory=None, llm=self.llm)
+        self._ensure_vader()
+        self.sentiment_analyzer = SentimentIntensityAnalyzer()
+        # If normalized sentiment and rating differ by more than this, we trigger regeneration.
+        self.sentiment_threshold = 0.25
 
     def workflow(self) -> Dict[str, Any]:
         context: Dict[str, Any] = {}
@@ -188,16 +195,33 @@ class PlanningAndReasoningSimulationAgent(SimulationAgent):
             
             if review_line:
                 review_text = review_line[0].split(':', 1)[1].strip()
-                return review_text
+            elif 'review:' in result.lower():
+                review_text = result.split('review:', 1)[-1].strip()
             else:
-                # Fallback: extract review text from result
-                if 'review:' in result.lower():
-                    review_text = result.split('review:', 1)[-1].strip()
-                    return review_text
+                # Last resort: return the result as-is (minus stars line if present)
+                lines = [l for l in result.split('\n') if 'stars:' not in l.lower()]
+                review_text = ' '.join(lines).strip()
+
+            review_text = review_text.strip()
+
+            # Option B: regenerate if sentiment and rating disagree
+            mismatch, sent_norm = self._sentiment_mismatch(final_rating, review_text)
+            if mismatch:
+                print("mismatch detected, regenerating review...")
+                adjusted_task = task_description + f"""
+
+                The tone of the draft does not align with a {final_rating}-star sentiment (detected sentiment score ~{sent_norm:.2f} on [0,1]). Regenerate ONLY the review so the tone matches {final_rating} stars. Keep it concise (2-4 sentences) and avoid changing the factual aspects already mentioned."""
+                regenerated = self.reasoning(adjusted_task)
+                parsed_regen = [
+                    line for line in regenerated.split('\n') if 'review:' in line.lower()
+                ]
+                if parsed_regen:
+                    review_text = parsed_regen[0].split(':', 1)[1].strip()
                 else:
-                    # Last resort: return the result as-is (minus stars line if present)
-                    lines = [l for l in result.split('\n') if 'stars:' not in l.lower()]
-                    return ' '.join(lines).strip()
+                    # If parsing fails, fall back to regenerated text as-is
+                    review_text = regenerated.strip() or review_text
+
+            return review_text.strip()
         except Exception as e:
             logger.error(f"Error in reasoning module: {e}")
             # Fallback to deterministic review if reasoning fails
@@ -257,6 +281,29 @@ class PlanningAndReasoningSimulationAgent(SimulationAgent):
         return " ".join(part.strip() for part in review_parts if part).strip()
 
     @staticmethod
+    def _ensure_vader() -> None:
+        """Download VADER lexicon if missing."""
+        try:
+            nltk.data.find("sentiment/vader_lexicon")
+        except LookupError:
+            try:
+                nltk.data.find("sentiment/vader_lexicon.zip")
+            except LookupError:
+                nltk.download("vader_lexicon", quiet=True)
+
+    def _sentiment_score(self, text: str) -> tuple:
+        """Return compound score and normalized [0,1] sentiment."""
+        scores = self.sentiment_analyzer.polarity_scores(text or "")
+        compound = scores.get("compound", 0.0)
+        return compound, (compound + 1) / 2
+
+    def _sentiment_mismatch(self, rating: float, text: str) -> tuple:
+        """Detect if sentiment and rating disagree beyond threshold."""
+        _, sentiment_norm = self._sentiment_score(text)
+        rating_norm = max(0.0, min(1.0, float(rating) / 5.0))
+        return abs(sentiment_norm - rating_norm) > self.sentiment_threshold, sentiment_norm
+
+    @staticmethod
     def _mean_stars(reviews: List[Dict[str, Any]]) -> float:
         """Same helper as PlanningOnly agent."""
         stars = [float(review.get("stars")) for review in reviews if review.get("stars") is not None]
@@ -291,7 +338,7 @@ if __name__ == "__main__":
     logging.getLogger().setLevel(logging.INFO)
 
     task_set = "yelp"
-    num_tasks = 100
+    num_tasks = 5
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     results_dir = Path(f"./planning_and_reasoning_{task_set}_{timestamp}")
     results_dir.mkdir(parents=True, exist_ok=True)
