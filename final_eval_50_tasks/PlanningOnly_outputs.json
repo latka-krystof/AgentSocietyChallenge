@@ -1,0 +1,552 @@
+[
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "wAo7casDFsbUR4O8Vb3u8A",
+            "item_id": "cVoyA9wrdF5E8OroBahxCg"
+        },
+        "output": {
+            "stars": 3.0,
+            "review": "As someone who typically hovers around 1.0 stars, I stopped by Mad Batter Bakery in Tucson for a event planning & services, food, food delivery services, caterers, restaurants, gluten-free, patisserie/cake shop, desserts, cupcakes, bakeries fix. It landed somewhere in the middle for me\u2014solid fundamentals, but nothing that moved the needle. Recent visitors keep mentioning cupcakes, bakery, birthday. One of the latest reviews noted: \"I wanted something light but special for my birthday I asked  Chelle if she "
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "tkSCd4gCwgh2XvDYmPlsPg",
+            "item_id": "T72WVqMPc67-DWCS8R_ASA"
+        },
+        "output": {
+            "stars": 1.0,
+            "review": "As someone who typically hovers around 1.0 stars, I stopped by Brighthouse Networks in Tampa for a professional services fix. I ran into enough friction that I'd steer friends elsewhere until things tighten up. Recent visitors keep mentioning service, brighthouse, internet. One of the latest reviews noted: \"I didn't go to this location (I guess that is what I will try next), but I did sign up for Brighthouse's promotion for \"lighting 75\" internet for $35.\" My last write-up had a similar tone, so this felt c"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "1q6v24bV-zYk9trWszBB4A",
+            "item_id": "9Ti9wdW4CGlF2b_ZuvtpdQ"
+        },
+        "output": {
+            "stars": 4.0,
+            "review": "As someone who typically hovers around 3.5 stars, I stopped by Bar Asia in Tampa for a restaurants, bars, nightlife, asian fusion fix. Most of what I experienced lined up with the upbeat chatter I've been seeing. Recent visitors keep mentioning great, food, service. One of the latest reviews noted: \"Great addition to the Tampa Restaurant scene.\" My last write-up had a similar tone, so this felt consistent. I'll keep it on my list for specific cravings."
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "IXAcl59yp4JyifX9A4KWkw",
+            "item_id": "0-evjpRKnht75t9J3NE8Zw"
+        },
+        "output": {
+            "stars": 2.0,
+            "review": "As someone who typically hovers around 3.8 stars, I stopped by Jet Rock Bar and Grill in Tucson for a american (new), restaurants fix. I ran into enough friction that I'd steer friends elsewhere until things tighten up. Recent visitors keep mentioning food, didn't, rock. One of the latest reviews noted: \"Had several hours to wait for a flight on 09/01/2012.\" My last write-up had a similar tone, so this felt consistent. I'll look for other options next time."
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "dWgnBvdmIvLtk6Ciw9xCEg",
+            "item_id": "RROICJV1SdNKeua8QOSfhA"
+        },
+        "output": {
+            "stars": 2.0,
+            "review": "As someone who typically hovers around 3.4 stars, I stopped by Katona James A Sr Roofing in Philadelphia for a home services, roofing fix. I ran into enough friction that I'd steer friends elsewhere until things tighten up. Recent visitors keep mentioning work, roof, then. One of the latest reviews noted: \"Mr.\" My last write-up had a similar tone, so this felt consistent. I'll look for other options next time."
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "6JcBAl3H_VGT5ipcPrpDOA",
+            "item_id": "vLpLGCbAtuxFzu2ka138aA"
+        },
+        "output": {
+            "stars": 4.0,
+            "review": "As someone who typically hovers around 2.3 stars, I stopped by Barnet Fair in Philadelphia for a beauty & spas, hair salons, hair stylists fix. Most of what I experienced lined up with the upbeat chatter I've been seeing. Recent visitors keep mentioning hair, great, salon. One of the latest reviews noted: \"I really like this place.\" My last write-up had a similar tone, so this felt consistent. I'll keep it on my list for specific cravings."
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "meJ9sHOd-fE0jn1rw2nXow",
+            "item_id": "AKtLOAuqcb2GWXuiRW5Www"
+        },
+        "output": {
+            "stars": 4.0,
+            "review": "As someone who typically hovers around 4.0 stars, I stopped by Twirls Frozen Yogurt  in Tucson for a ice cream & frozen yogurt, food fix. Most of what I experienced lined up with the upbeat chatter I've been seeing. Recent visitors keep mentioning place, flavors, yogurt. One of the latest reviews noted: \"The change from Swirl to Twirls hasn't been an improvement.\" My last write-up had a similar tone, so this felt consistent. I'll keep it on my list for specific cravings."
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "ScHwaxyOrnZZsk66S4NHrA",
+            "item_id": "Flut-RAHgxOwe_4FlkqGSQ"
+        },
+        "output": {
+            "stars": 4.0,
+            "review": "As someone who typically hovers around 3.0 stars, I stopped by Cruise America Motorhome Rental & Sales in Tucson for a rv rental, hotels & travel, automotive, truck rental fix. Most of what I experienced lined up with the upbeat chatter I've been seeing. Recent visitors keep mentioning hank, great, family. One of the latest reviews noted: \"Well, we had a family reunion 2 weeks ago and rented 2 large units from this company, let me say Hank was a good guy overall, but one of the units had some major problems"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "FzTqrbKr-Bxle-eL2rNPbg",
+            "item_id": "KrKQChZ1hwHHVaUK9Zc-Ag"
+        },
+        "output": {
+            "stars": 4.0,
+            "review": "As someone who typically hovers around 2.6 stars, I stopped by Iron Hill Brewery & Restaurant in Philadelphia for a food, breweries, restaurants, american (traditional), brewpubs fix. Most of what I experienced lined up with the upbeat chatter I've been seeing. Recent visitors keep mentioning great, good, food. One of the latest reviews noted: \"Not that good but the beer is ok.\" My last write-up had a similar tone, so this felt consistent. I'll keep it on my list for specific cravings."
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "JkSiLxs14OOaD8hATWR-PQ",
+            "item_id": "L-f8TzrPaOztNMz7xikbNA"
+        },
+        "output": {
+            "stars": 5.0,
+            "review": "As someone who typically hovers around 3.8 stars, I stopped by Family Eyecare At Westchase in Tampa for a health & medical, sporting goods, eyewear & opticians, medical supplies, outdoor gear, shopping, optometrists fix. Most of what I experienced lined up with the upbeat chatter I've been seeing. Recent visitors keep mentioning doctor, mertzlufft, awesome. One of the latest reviews noted: \"This place is awesome.\" My last write-up had a similar tone, so this felt consistent. I'll keep it on my list for spec"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "hG72KnoH6BqJUriH76ZjcA",
+            "item_id": "RBCtHLVvc230q8zkRWIoyQ"
+        },
+        "output": {
+            "stars": 5.0,
+            "review": "As someone who typically hovers around 4.1 stars, I stopped by Creme Brulee Bistro & Cafe in Philadelphia for a breakfast & brunch, patisserie/cake shop, coffee & tea, restaurants, french, cafes, food fix. Most of what I experienced lined up with the upbeat chatter I've been seeing. Recent visitors keep mentioning delicious, place, dinner. One of the latest reviews noted: \"Que comida tan rica !!!!! Todo estaba delicioso.\" My last write-up had a similar tone, so this felt consistent. I'll keep it on my list "
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "Iu_0caGip_vp8EaTZIPhEA",
+            "item_id": "mcA7_ZHBxL30OLKjlmNmng"
+        },
+        "output": {
+            "stars": 3.0,
+            "review": "As someone who typically hovers around 2.5 stars, I stopped by Sansom Cleaners in Philadelphia for a dry cleaning & laundry, local services, laundry services fix. It landed somewhere in the middle for me\u2014solid fundamentals, but nothing that moved the needle. Recent visitors keep mentioning clothes, don't, i've. One of the latest reviews noted: \"I use to be a customer here - all my clothes smelled like smoke when I got them back.\" My last write-up had a similar tone, so this felt consistent. I'd only return "
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "Aoii1MTXAnc8G6kOC3j4gA",
+            "item_id": "WANyiYJgedwrNuV63x8s1g"
+        },
+        "output": {
+            "stars": 4.0,
+            "review": "As someone who typically hovers around 3.0 stars, I stopped by Photographic Works in Tucson for a shopping, arts & entertainment, art galleries, photography stores & services, printing services, local services fix. Most of what I experienced lined up with the upbeat chatter I've been seeing. Recent visitors keep mentioning film, photographic, tucson. One of the latest reviews noted: \"If you've tried getting a roll of film developed lately, you were probably surprised by how few places actually do it.\" My la"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "BYj5LjLS7mMl7aExIcBe8Q",
+            "item_id": "t3PkHzVTvPA8qRxKe9TIkQ"
+        },
+        "output": {
+            "stars": 4.0,
+            "review": "As someone who typically hovers around 3.5 stars, I stopped by Booker's Restaurant and Bar in Philadelphia for a bars, event planning & services, nightlife, salad, american (traditional), tapas/small plates, venues & event spaces, breakfast & brunch, restaurants, american (new) fix. Most of what I experienced lined up with the upbeat chatter I've been seeing. Recent visitors keep mentioning food, good, place. One of the latest reviews noted: \"I didn't know what to expect, but I was seriously so impressed wi"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "PpCc7-9dC5PKfXenSvgixQ",
+            "item_id": "nA4by92WDrSbxooQOe5rMQ"
+        },
+        "output": {
+            "stars": 5.0,
+            "review": "As someone who typically hovers around 4.1 stars, I stopped by East Falls Beverage in Philadelphia for a beer, wine & spirits, food fix. Most of what I experienced lined up with the upbeat chatter I've been seeing. Recent visitors keep mentioning great, beer, place. One of the latest reviews noted: \"Updated review:  ordered a keg from East Falls beverage.\" My last write-up had a similar tone, so this felt consistent. I'll keep it on my list for specific cravings."
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "UId9V4QgwTdn3XDkeD2xKA",
+            "item_id": "Mha77MN_BYGB-w7DONZ5YA"
+        },
+        "output": {
+            "stars": 4.0,
+            "review": "As someone who typically hovers around 5.0 stars, I stopped by Cuenelli's Peruvian Restaurant in Tampa for a peruvian, restaurants, latin american fix. Most of what I experienced lined up with the upbeat chatter I've been seeing. Recent visitors keep mentioning chicken, food, place. One of the latest reviews noted: \"The chicken sandwich was phenomenal.\" My last write-up had a similar tone, so this felt consistent. I'll keep it on my list for specific cravings."
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "-q8QTgZ8UKIgFKnI8A-seA",
+            "item_id": "ijrWM-bKfFfqbnkvT1MYMQ"
+        },
+        "output": {
+            "stars": 4.0,
+            "review": "As someone who typically hovers around 4.0 stars, I stopped by El Rincon Latino in Tampa for a restaurants, latin american fix. Most of what I experienced lined up with the upbeat chatter I've been seeing. Recent visitors keep mentioning dominican, food, place. One of the latest reviews noted: \"Dont eat here never everrrrr.\" My last write-up had a similar tone, so this felt consistent. I'll keep it on my list for specific cravings."
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "7GcuC5_UL2PBjTqRRYbNhw",
+            "item_id": "sWhPGcyYJoOTAabh2NjbRA"
+        },
+        "output": {
+            "stars": 4.0,
+            "review": "As someone who typically hovers around 2.0 stars, I stopped by Kwality Fusion in Tampa for a restaurants, pakistani, buffets, indian fix. Most of what I experienced lined up with the upbeat chatter I've been seeing. Recent visitors keep mentioning buffet, indian, vegetarian. One of the latest reviews noted: \"Stopped in to get sweets/mithai for Diwali.\" My last write-up had a similar tone, so this felt consistent. I'll keep it on my list for specific cravings."
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "sJKPdJqoR7wP8cj-utik1A",
+            "item_id": "4-TKASCNK5-XBWdXmeXWbA"
+        },
+        "output": {
+            "stars": 3.0,
+            "review": "As someone who typically hovers around 4.4 stars, I stopped by Wawa in Philadelphia for a food, coffee & tea, convenience stores, sandwiches, restaurants fix. It landed somewhere in the middle for me\u2014solid fundamentals, but nothing that moved the needle. Recent visitors keep mentioning wawa, place, busy. One of the latest reviews noted: \"This is the worst wawa I've ever been to in my life.\" My last write-up had a similar tone, so this felt consistent. I'd only return if friends insisted."
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "LY1fw6YZ6jgA8xcPVIZRPw",
+            "item_id": "yvpwN5321mM3x8G2ZiEZmw"
+        },
+        "output": {
+            "stars": 4.0,
+            "review": "As someone who typically hovers around 3.2 stars, I stopped by Little Istanbul in Philadelphia for a turkish, restaurants fix. Most of what I experienced lined up with the upbeat chatter I've been seeing. Recent visitors keep mentioning food, place, good. One of the latest reviews noted: \"Love the place.\" My last write-up had a similar tone, so this felt consistent. I'll keep it on my list for specific cravings."
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "w_ScPR6QVQKgI3njSdC7KQ",
+            "item_id": "UMLpPE8Ut-VQPRohqm1HFQ"
+        },
+        "output": {
+            "stars": 4.0,
+            "review": "As someone who typically hovers around 3.9 stars, I stopped by The Flycatcher in Tucson for a nightlife, dive bars, bars fix. Most of what I experienced lined up with the upbeat chatter I've been seeing. Recent visitors keep mentioning place, great, night. One of the latest reviews noted: \"Looking for a great dive-ish bar in Downtown Tucson? This is the place to go! \n\nWe stumbled upon this gem while walking through 6th St on a Saturday night and loved it.\" My last write-up had a similar tone, so this felt c"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "uMKWYISQKvlbKyy22RG3wg",
+            "item_id": "jwRB-z8DeRmyIaWBcYcJMw"
+        },
+        "output": {
+            "stars": 3.0,
+            "review": "As someone who typically hovers around 2.2 stars, I stopped by Great Clips Encore Commons in Tampa for a beauty & spas, hair salons fix. It landed somewhere in the middle for me\u2014solid fundamentals, but nothing that moved the needle. Recent visitors keep mentioning hair, haircut, place. One of the latest reviews noted: \"I got a haircut at this place and I like it! I walked in off the street and didn't ask for appointment, they charged me $14, tipped her $5 and I was in and out in 20 minutes.\" My last write-u"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "BvBhLkZNlIYFtgaiZ-BfeQ",
+            "item_id": "tkW6eLIT26-0lMCByw1OGw"
+        },
+        "output": {
+            "stars": 4.0,
+            "review": "As someone who typically hovers around 3.8 stars, I stopped by Marios Trattoria And Bar in Tampa for a italian, restaurants fix. Most of what I experienced lined up with the upbeat chatter I've been seeing. Recent visitors keep mentioning food, pizza, service. One of the latest reviews noted: \"Service has been disappointing on 2 separate occasions.\" My last write-up had a similar tone, so this felt consistent. I'll keep it on my list for specific cravings."
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "5PBvxl5YzLPVni9AI8qsuA",
+            "item_id": "L7nW6sGXi3J6MeB9Vg4jVw"
+        },
+        "output": {
+            "stars": 3.0,
+            "review": "As someone who typically hovers around 1.8 stars, I stopped by Pottery Barn in Tucson for a home & garden, furniture stores, home decor, shopping fix. It landed somewhere in the middle for me\u2014solid fundamentals, but nothing that moved the needle. Recent visitors keep mentioning pottery, barn, store. One of the latest reviews noted: \"Nice summer selection of sumer furniture.\" My last write-up had a similar tone, so this felt consistent. I'd only return if friends insisted."
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "xbUdF2XmnFwOWEsNSpabyA",
+            "item_id": "J-ciDDEdIHMcChGIyKZnOg"
+        },
+        "output": {
+            "stars": 4.0,
+            "review": "As someone who typically hovers around 4.4 stars, I stopped by Cake Life Bake Shop in Philadelphia for a caterers, cafes, event planning & services, food, cupcakes, bakeries, restaurants, desserts fix. Most of what I experienced lined up with the upbeat chatter I've been seeing. Recent visitors keep mentioning cake, it's, icing. One of the latest reviews noted: \"Beautiful clean shop with knock your socks off Everything.\" My last write-up had a similar tone, so this felt consistent. I'll keep it on my list f"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "wKvc5-MBjo5-GQqPnbG8Lw",
+            "item_id": "Unw031KzD4WIWWKve0-Jxw"
+        },
+        "output": {
+            "stars": 3.0,
+            "review": "As someone who typically hovers around 1.7 stars, I stopped by Julio's Mufflers in Philadelphia for a auto parts & supplies, auto repair, automotive fix. It landed somewhere in the middle for me\u2014solid fundamentals, but nothing that moved the needle. Recent visitors keep mentioning exhaust, pipe, muffler. One of the latest reviews noted: \"I visited there 3 times for a muffler fix.\" My last write-up had a similar tone, so this felt consistent. I'd only return if friends insisted."
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "STB-P06LzXIzLj5feAIihA",
+            "item_id": "Tdb_Nd4EQar9sXE-a8SPSA"
+        },
+        "output": {
+            "stars": 3.0,
+            "review": "As someone who typically hovers around 1.0 stars, I stopped by Gail's Caribbean & American Cuisine in Philadelphia for a caribbean, restaurants, seafood, american (traditional), food, trinidadian, american (new), indian, specialty food fix. It landed somewhere in the middle for me\u2014solid fundamentals, but nothing that moved the needle. Recent visitors keep mentioning doubles, food, trini. One of the latest reviews noted: \"Great Trini food find in Philly.\" My last write-up had a similar tone, so this felt con"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "mjc1_oPVdI1zo7ucgzyc5Q",
+            "item_id": "vdv_HaU7ZIID12KB9mG9Vw"
+        },
+        "output": {
+            "stars": 3.0,
+            "review": "As someone who typically hovers around 3.8 stars, I stopped by Vale Food Co in Tampa for a acai bowls, food delivery services, salad, poke, juice bars & smoothies, american (traditional), food, american (new), restaurants fix. It landed somewhere in the middle for me\u2014solid fundamentals, but nothing that moved the needle. Recent visitors keep mentioning food, place, fresh. One of the latest reviews noted: \"The food is good I have been there about 6 or 7 times went today and the portion size was laughable I e"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "5k0yMdidXDS3fSVpgV26_w",
+            "item_id": "H3PBFYqsgtA_EZr5WgroeA"
+        },
+        "output": {
+            "stars": 4.0,
+            "review": "As someone who typically hovers around 5.0 stars, I stopped by Modern Vac & Sew Centers in Philadelphia for a appliances & repair, local services, sewing & alterations fix. Most of what I experienced lined up with the upbeat chatter I've been seeing. Recent visitors keep mentioning vacuum, machine, price. One of the latest reviews noted: \"This guy is a jack**s.\" My last write-up had a similar tone, so this felt consistent. I'll keep it on my list for specific cravings."
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "sEwiNGNuMBxH2DV-4EDymw",
+            "item_id": "GB1Bmqd-Ymw37wv3UePOCA"
+        },
+        "output": {
+            "stars": 2.0,
+            "review": "As someone who typically hovers around 4.0 stars, I stopped by US Post Office in Philadelphia for a public services & government, local services, post offices, shipping centers fix. I ran into enough friction that I'd steer friends elsewhere until things tighten up. Recent visitors keep mentioning package, should, post. One of the latest reviews noted: \"The women who work the counter are surly.\" My last write-up had a similar tone, so this felt consistent. I'll look for other options next time."
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "NQODFbxMdI6YXy2MVTM-4Q",
+            "item_id": "lySRYMCeVCacAeiEL65iBg"
+        },
+        "output": {
+            "stars": 5.0,
+            "review": "As someone who typically hovers around 4.7 stars, I stopped by Club Vapor in Tucson for a shopping, local flavor, tobacco shops, vape shops fix. Most of what I experienced lined up with the upbeat chatter I've been seeing. Recent visitors keep mentioning juice, tank, flavors. One of the latest reviews noted: \"I came into Tucson from so cal and I needed vape juice and I found this spot.\" My last write-up had a similar tone, so this felt consistent. I'll keep it on my list for specific cravings."
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "zn23grdBC9wQ9ZXjyzJEEw",
+            "item_id": "qHCfhWPyb1GXpzq9Wk3Vkg"
+        },
+        "output": {
+            "stars": 3.0,
+            "review": "As someone who typically hovers around 4.0 stars, I stopped by New England Pizza in Philadelphia for a pizza, restaurants fix. It landed somewhere in the middle for me\u2014solid fundamentals, but nothing that moved the needle. Recent visitors keep mentioning good, pizza, place. One of the latest reviews noted: \"This restaurant is a nice place to go and sit down to have something to eat.\" My last write-up had a similar tone, so this felt consistent. I'd only return if friends insisted."
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "wDVy-AjU-feA40GF1RtwXw",
+            "item_id": "fixjFaCYK2yDz5F-L2ASeg"
+        },
+        "output": {
+            "stars": 3.0,
+            "review": "As someone who typically hovers around 3.6 stars, I stopped by Muscle Maker Grill in Philadelphia for a food, american (new), salad, juice bars & smoothies, wraps, restaurants fix. It landed somewhere in the middle for me\u2014solid fundamentals, but nothing that moved the needle. Recent visitors keep mentioning food, chicken, good. One of the latest reviews noted: \"Ok, so where do I start.\" My last write-up had a similar tone, so this felt consistent. I'd only return if friends insisted."
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "GDRHJp-xDsBw-1LK1VBdZw",
+            "item_id": "Fkf9r6xz0u4mxNB54O7PDw"
+        },
+        "output": {
+            "stars": 4.0,
+            "review": "As someone who typically hovers around 3.5 stars, I stopped by Eliz Mexican Restaurant & American Breakfast in Tampa for a mexican, restaurants, american (new), american (traditional) fix. Most of what I experienced lined up with the upbeat chatter I've been seeing. Recent visitors keep mentioning food, fresh, breakfast. One of the latest reviews noted: \"Why 5 stars? Brett, you need to revisit and update your review :-).\" My last write-up had a similar tone, so this felt consistent. I'll keep it on my list "
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "pd8nCjLEvHBhx5t4xfclUg",
+            "item_id": "iuv_kT2zc_-4KFdUPFd9Xg"
+        },
+        "output": {
+            "stars": 3.0,
+            "review": "As someone who typically hovers around 4.8 stars, I stopped by Michaels in Tucson for a hobby shops, arts & crafts, home decor, shopping, knitting supplies, art supplies, home & garden fix. It landed somewhere in the middle for me\u2014solid fundamentals, but nothing that moved the needle. Recent visitors keep mentioning store, paint, always. One of the latest reviews noted: \"They accept digital coupons!!! I love that everyone is always super helpful in person and on the phone.\" My last write-up had a similar to"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "d2SmmiFbMXUxT5-cTzu0OQ",
+            "item_id": "afJf3BGC-kZkrFR1CaWdww"
+        },
+        "output": {
+            "stars": 3.0,
+            "review": "As someone who typically hovers around 2.8 stars, I stopped by London Heights British Pub in Tampa for a bars, pubs, sports bars, nightlife, restaurants, british, burgers, breakfast & brunch fix. It landed somewhere in the middle for me\u2014solid fundamentals, but nothing that moved the needle. Recent visitors keep mentioning place, good, great. One of the latest reviews noted: \"Food is great and the atmosphere is a lot of fun.\" My last write-up had a similar tone, so this felt consistent. I'd only return if fr"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "MvezyusV-u39ch6sEC3Zkg",
+            "item_id": "V7PzZzhM8HAFX6sNmadNuA"
+        },
+        "output": {
+            "stars": 3.0,
+            "review": "As someone who typically hovers around 3.0 stars, I stopped by Taco Bus in Tampa for a mexican, food trucks, restaurants, food fix. It landed somewhere in the middle for me\u2014solid fundamentals, but nothing that moved the needle. Recent visitors keep mentioning location, time, order. One of the latest reviews noted: \"Cheap and delicious lunch.\" My last write-up had a similar tone, so this felt consistent. I'd only return if friends insisted."
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "4NFi8Gn5FcJCA_UzOCgITg",
+            "item_id": "JRgjDdPh-8t2jbxuDMuKqw"
+        },
+        "output": {
+            "stars": 4.0,
+            "review": "As someone who typically hovers around 5.0 stars, I stopped by Chipotle Mexican Grill in Tucson for a ethnic food, food, mexican, restaurants, fast food, specialty food fix. Most of what I experienced lined up with the upbeat chatter I've been seeing. Recent visitors keep mentioning chipotle, food, lunch. One of the latest reviews noted: \"A big thanks to Nicole and Crystal for making today my best trip to Chipotle ever.\" My last write-up had a similar tone, so this felt consistent. I'll keep it on my list f"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "rK1ALZgQGizqIlxLwh25Gg",
+            "item_id": "sl2O37Ei0v3PbM9x20Pg_A"
+        },
+        "output": {
+            "stars": 4.0,
+            "review": "As someone who typically hovers around 1.0 stars, I stopped by JJM Plumbing in Tampa for a plumbing, home services, water heater installation/repair, water purification services fix. Most of what I experienced lined up with the upbeat chatter I've been seeing. Recent visitors keep mentioning would, john, water. One of the latest reviews noted: \"Our water heater is on the opposite side of the house from the master bath and especially in the winter, it would take a very long time and many gallons of wasted wa"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "BsbIvf1W0kpMdIt2GeuNig",
+            "item_id": "wJmyu7W1K9A_gE8Ed4Bc9w"
+        },
+        "output": {
+            "stars": 4.0,
+            "review": "As someone who typically hovers around 4.3 stars, I stopped by Trident Grill in Tucson for a bars, seafood, sports bars, american (traditional), sandwiches, nightlife, restaurants fix. Most of what I experienced lined up with the upbeat chatter I've been seeing. Recent visitors keep mentioning burger, veggie, food. One of the latest reviews noted: \"Came for the first time today with family and Bailey was excellent, she was friendly and attentive and THE FOOD was incredible.\" My last write-up had a similar t"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "IKk8fBaYTewgVoCCzheV0g",
+            "item_id": "j2AhQF5-dYGyJFbQd5t4aA"
+        },
+        "output": {
+            "stars": 4.0,
+            "review": "As someone who typically hovers around 3.1 stars, I stopped by Singapore Chinese Vegetarian Restaurant in Philadelphia for a restaurants, vegetarian, dim sum, chinese fix. Most of what I experienced lined up with the upbeat chatter I've been seeing. Recent visitors keep mentioning place, meat, vegetarian. One of the latest reviews noted: \"During a recent excursion to Chinatown, we found this place on yelp.\" My last write-up had a similar tone, so this felt consistent. I'll keep it on my list for specific cr"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "vHn4yfazy3GGzLZGRmt4mQ",
+            "item_id": "aVxN4BthCaIt_LP1_w0STg"
+        },
+        "output": {
+            "stars": 4.0,
+            "review": "As someone who typically hovers around 3.7 stars, I stopped by Resale Ranch in Tucson for a antiques, shopping, thrift stores, personal shopping, local services, accessories, junk removal & hauling, fashion fix. Most of what I experienced lined up with the upbeat chatter I've been seeing. Recent visitors keep mentioning items, unique, jodi. One of the latest reviews noted: \"This is a once in a lifetime store operated by a Once in forever owner! Simply said Jodi  is incredible.\" My last write-up had a simila"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "Ejcb-sIMc-1vgo4xM2FBfg",
+            "item_id": "YKQc1IpoaBfIEyMQCisZ6Q"
+        },
+        "output": {
+            "stars": 4.0,
+            "review": "As someone who typically hovers around 3.9 stars, I stopped by MaFooCo in Tucson for a street vendors, korean, food trucks, restaurants, mexican, food fix. Most of what I experienced lined up with the upbeat chatter I've been seeing. Recent visitors keep mentioning food, kimchi, tacos. One of the latest reviews noted: \"I want my baby back, baby back, baby back.\" My last write-up had a similar tone, so this felt consistent. I'll keep it on my list for specific cravings."
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "puzJObp42yQIfb3gYIj3hQ",
+            "item_id": "Hk_EjFDeK5u7rlYEUx6a_g"
+        },
+        "output": {
+            "stars": 3.0,
+            "review": "As someone who typically hovers around 4.0 stars, I stopped by Jaggie's Restaurant in Philadelphia for a caribbean, restaurants fix. It landed somewhere in the middle for me\u2014solid fundamentals, but nothing that moved the needle. Recent visitors keep mentioning food, curry, goat. One of the latest reviews noted: \"Pros: Prices are very reasonable, and you'll never be disappointed with the size of your platter.\" My last write-up had a similar tone, so this felt consistent. I'd only return if friends insisted."
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "WJ5wpZkqUyPOzFuro46iww",
+            "item_id": "tJH6fNXoMkgWRyN_Y76eZg"
+        },
+        "output": {
+            "stars": 4.0,
+            "review": "As someone who typically hovers around 4.1 stars, I stopped by New China Court in Philadelphia for a restaurants, chinese fix. Most of what I experienced lined up with the upbeat chatter I've been seeing. Recent visitors keep mentioning food, chinese, place. One of the latest reviews noted: \"Great food very clean.\" My last write-up had a similar tone, so this felt consistent. I'll keep it on my list for specific cravings."
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "VgE2QkDTbDzD0R4NOUBv-A",
+            "item_id": "pX79hg6t0WsaCzU2npdK5w"
+        },
+        "output": {
+            "stars": 4.0,
+            "review": "As someone who typically hovers around 3.8 stars, I stopped by Rai Rai Ramen in Philadelphia for a restaurants, japanese, asian fusion fix. Most of what I experienced lined up with the upbeat chatter I've been seeing. Recent visitors keep mentioning ramen, pork, went. One of the latest reviews noted: \"Went to Rai Rai upon recommendation of friends.\" My last write-up had a similar tone, so this felt consistent. I'll keep it on my list for specific cravings."
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "rq82qNDKZnVWO6smWEGkNQ",
+            "item_id": "ZLerfIo2cDSPXJ9K57WYxQ"
+        },
+        "output": {
+            "stars": 4.0,
+            "review": "As someone who typically hovers around 2.5 stars, I stopped by Studio510 in Tampa for a beauty & spas, nail salons, hair stylists, hair salons, skin care, men's hair salons, blow dry/out services fix. Most of what I experienced lined up with the upbeat chatter I've been seeing. Recent visitors keep mentioning hair, color, salon. One of the latest reviews noted: \"In my past experiences, being blonde has made trips to the hair salon quite stressful.\" My last write-up had a similar tone, so this felt consisten"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "Coie_PxO9Hzt6qBKxb-S9Q",
+            "item_id": "eqK66D5jQRO2eY1_MhAo_Q"
+        },
+        "output": {
+            "stars": 5.0,
+            "review": "As someone who typically hovers around 3.3 stars, I stopped by Dan's Fresh Meats in Philadelphia for a food, butcher fix. Most of what I experienced lined up with the upbeat chatter I've been seeing. Recent visitors keep mentioning blah, meats, hoagie. One of the latest reviews noted: \"The liner notes on our record may list some musicians and producers but if you want to know who's really responsible for our record it's simple.\" My last write-up had a similar tone, so this felt consistent. I'll keep it on m"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "zvFLlakt9gRTu9JxXVnRhw",
+            "item_id": "vPSRs9RRGbv4Y4nNWyw5Vw"
+        },
+        "output": {
+            "stars": 3.0,
+            "review": "As someone who typically hovers around 1.0 stars, I stopped by Goodness Fresh Food and Juice Bar in Tucson for a juice bars & smoothies, specialty food, food, health markets, fast food, vegetarian, restaurants, salad fix. It landed somewhere in the middle for me\u2014solid fundamentals, but nothing that moved the needle. Recent visitors keep mentioning place, food, good. One of the latest reviews noted: \"Goodness has good food but HORRIBLE customer service.\" My last write-up had a similar tone, so this felt cons"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "8cXjs8VbsYvOYblV-5oCvA",
+            "item_id": "3oxlWgUlq7gN7-qXhOpLpg"
+        },
+        "output": {
+            "stars": 4.0,
+            "review": "As someone who typically hovers around 4.7 stars, I stopped by El Coqui Puerto Rican Restaurant in Tucson for a restaurants, ukrainian, caribbean, latin american fix. Most of what I experienced lined up with the upbeat chatter I've been seeing. Recent visitors keep mentioning pork, food, puerto. One of the latest reviews noted: \"If you're from the East Coast, you must be thinking, WTF do Puerto Ricans eat? \n\nWell, I am from the East Coast and oddly enough, I tried Puerto Rican food for the first time in AZ."
+        }
+    }
+]

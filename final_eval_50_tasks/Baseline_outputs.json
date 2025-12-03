@@ -1,0 +1,552 @@
+[
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "wAo7casDFsbUR4O8Vb3u8A",
+            "item_id": "cVoyA9wrdF5E8OroBahxCg"
+        },
+        "output": {
+            "stars": 1.0,
+            "review": "I ordered cupcakes for an event and the delivery was inexcusably late, with the owner offering the unprofessional excuse that she was \"running behind\""
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "tkSCd4gCwgh2XvDYmPlsPg",
+            "item_id": "T72WVqMPc67-DWCS8R_ASA"
+        },
+        "output": {
+            "stars": 1.0,
+            "review": "The absolute worst customer service experience I've ever had with an internet provider. I was on hold for over an hour just to be told they"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "1q6v24bV-zYk9trWszBB4A",
+            "item_id": "9Ti9wdW4CGlF2b_ZuvtpdQ"
+        },
+        "output": {
+            "stars": 4.0,
+            "review": "I came here with a few friends for happy hour a while back and we had a really solid time. The food was pretty good for a bar"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "IXAcl59yp4JyifX9A4KWkw",
+            "item_id": "0-evjpRKnht75t9J3NE8Zw"
+        },
+        "output": {
+            "stars": 1.0,
+            "review": "When you're a captive audience at the airport, you hope for the best, but this was a new low. My \"medium rare\" burger"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "dWgnBvdmIvLtk6Ciw9xCEg",
+            "item_id": "RROICJV1SdNKeua8QOSfhA"
+        },
+        "output": {
+            "stars": 1.0,
+            "review": "The final cost for our roof repair was significantly higher than the verbal estimate we were given. To make matters worse, the work was so poor that"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "6JcBAl3H_VGT5ipcPrpDOA",
+            "item_id": "vLpLGCbAtuxFzu2ka138aA"
+        },
+        "output": {
+            "stars": 2.0,
+            "review": "I came here based on the great reviews but was pretty underwhelmed. The salon has a cool vibe, but the haircut I got was just okay,"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "meJ9sHOd-fE0jn1rw2nXow",
+            "item_id": "AKtLOAuqcb2GWXuiRW5Www"
+        },
+        "output": {
+            "stars": 4.0,
+            "review": "I really enjoyed coming here for a quick froyo fix. They always had a decent selection of flavors and the toppings bar was well-stocked,"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "ScHwaxyOrnZZsk66S4NHrA",
+            "item_id": "Flut-RAHgxOwe_4FlkqGSQ"
+        },
+        "output": {
+            "stars": 4.0,
+            "review": "We rented an RV for a family trip and the process was pretty straightforward. The vehicle was clean and everything worked as expected, which was"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "FzTqrbKr-Bxle-eL2rNPbg",
+            "item_id": "KrKQChZ1hwHHVaUK9Zc-Ag"
+        },
+        "output": {
+            "stars": 2.0,
+            "review": "I came here expecting a great brewery experience, but the beer was surprisingly mediocre and didn't stand out. The food"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "JkSiLxs14OOaD8hATWR-PQ",
+            "item_id": "L-f8TzrPaOztNMz7xikbNA"
+        },
+        "output": {
+            "stars": 5.0,
+            "review": "I've been to my fair share of eye doctors, but this place is a cut above the rest. Dr. Mertzlufft is fantastic"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "hG72KnoH6BqJUriH76ZjcA",
+            "item_id": "RBCtHLVvc230q8zkRWIoyQ"
+        },
+        "output": {
+            "stars": 5.0,
+            "review": "This is a fantastic little spot for brunch. The crepes were absolutely delicious, and the coffee was strong and well-made. It's a"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "Iu_0caGip_vp8EaTZIPhEA",
+            "item_id": "mcA7_ZHBxL30OLKjlmNmng"
+        },
+        "output": {
+            "stars": 2.0,
+            "review": "I dropped off a couple of dress shirts and was pretty taken aback by the price when I came to pick them up. The quality of the cleaning was fine"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "Aoii1MTXAnc8G6kOC3j4gA",
+            "item_id": "WANyiYJgedwrNuV63x8s1g"
+        },
+        "output": {
+            "stars": 3.0,
+            "review": "The quality of the prints I got here was definitely top-notch, and you can tell the staff knows their stuff. However, the prices"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "BYj5LjLS7mMl7aExIcBe8Q",
+            "item_id": "t3PkHzVTvPA8qRxKe9TIkQ"
+        },
+        "output": {
+            "stars": 3.0,
+            "review": "Came here for brunch and really wanted to love it, but the experience was a bit of a mixed bag. The ambiance is great and our server was"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "PpCc7-9dC5PKfXenSvgixQ",
+            "item_id": "nA4by92WDrSbxooQOe5rMQ"
+        },
+        "output": {
+            "stars": 5.0,
+            "review": "This is a fantastic neighborhood spot with a surprisingly great selection of craft beers. The staff is always super friendly and helpful if you're looking"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "UId9V4QgwTdn3XDkeD2xKA",
+            "item_id": "Mha77MN_BYGB-w7DONZ5YA"
+        },
+        "output": {
+            "stars": 5.0,
+            "review": "This place is an absolute gem for authentic Peruvian food in Tampa! The Lomo Saltado was cooked perfectly, and the portions were incredibly generous"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "-q8QTgZ8UKIgFKnI8A-seA",
+            "item_id": "ijrWM-bKfFfqbnkvT1MYMQ"
+        },
+        "output": {
+            "stars": 4.0,
+            "review": "I've been looking for a good, authentic Latin spot and I think I've found it! The food was delicious and tasted just like a home"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "7GcuC5_UL2PBjTqRRYbNhw",
+            "item_id": "sWhPGcyYJoOTAabh2NjbRA"
+        },
+        "output": {
+            "stars": 2.0,
+            "review": "I came here hoping to try the buffet, but was disappointed to find it was closed with no indication of when it might return. I ordered takeout"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "sJKPdJqoR7wP8cj-utik1A",
+            "item_id": "4-TKASCNK5-XBWdXmeXWbA"
+        },
+        "output": {
+            "stars": 3.0,
+            "review": "As a Wawa loyalist, I was so happy to have one right on Chestnut, but this location was always a bit of a letdown"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "LY1fw6YZ6jgA8xcPVIZRPw",
+            "item_id": "yvpwN5321mM3x8G2ZiEZmw"
+        },
+        "output": {
+            "stars": 3.0,
+            "review": "The food here is quite authentic and flavorful, especially the lamb dishes which were cooked perfectly. However, the service was incredibly slow, and it felt"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "w_ScPR6QVQKgI3njSdC7KQ",
+            "item_id": "UMLpPE8Ut-VQPRohqm1HFQ"
+        },
+        "output": {
+            "stars": 4.0,
+            "review": "Sad to see this place has closed down, it was a great spot for live music. The Flycatcher was a classic dive bar with cheap drinks"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "uMKWYISQKvlbKyy22RG3wg",
+            "item_id": "jwRB-z8DeRmyIaWBcYcJMw"
+        },
+        "output": {
+            "stars": 1.0,
+            "review": "I came in for a simple trim and left with a completely uneven haircut. The stylist seemed rushed and didn't listen to what I asked"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "BvBhLkZNlIYFtgaiZ-BfeQ",
+            "item_id": "tkW6eLIT26-0lMCByw1OGw"
+        },
+        "output": {
+            "stars": 4.0,
+            "review": "This is a great little neighborhood Italian spot right on Bayshore. The food is consistently good and it has a very comfortable, casual vibe perfect for"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "5PBvxl5YzLPVni9AI8qsuA",
+            "item_id": "L7nW6sGXi3J6MeB9Vg4jVw"
+        },
+        "output": {
+            "stars": 1.0,
+            "review": "I don't understand the hype or the prices at this place. The furniture looks nice from a distance, but the quality just doesn't"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "xbUdF2XmnFwOWEsNSpabyA",
+            "item_id": "J-ciDDEdIHMcChGIyKZnOg"
+        },
+        "output": {
+            "stars": 5.0,
+            "review": "Stumbled upon this place while walking around Fishtown and I'm so glad I did. The display case is full of some seriously impressive looking"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "wKvc5-MBjo5-GQqPnbG8Lw",
+            "item_id": "Unw031KzD4WIWWKve0-Jxw"
+        },
+        "output": {
+            "stars": 1.0,
+            "review": "I came here to get a simple muffler repair and was met with the laziest, most unhelpful staff I've ever encountered. They didn't"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "STB-P06LzXIzLj5feAIihA",
+            "item_id": "Tdb_Nd4EQar9sXE-a8SPSA"
+        },
+        "output": {
+            "stars": 1.0,
+            "review": "I was really hoping for some authentic Trinidadian food, but this was a huge letdown. The oxtail was tough and the whole meal was just"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "mjc1_oPVdI1zo7ucgzyc5Q",
+            "item_id": "vdv_HaU7ZIID12KB9mG9Vw"
+        },
+        "output": {
+            "stars": 4.0,
+            "review": "This is a solid choice for a quick and healthy lunch downtown, especially if you're looking for something other than a sandwich. I like the build"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "5k0yMdidXDS3fSVpgV26_w",
+            "item_id": "H3PBFYqsgtA_EZr5WgroeA"
+        },
+        "output": {
+            "stars": 5.0,
+            "review": "I brought my old sewing machine in for a tune-up and the service was fantastic. The gentleman who helped me was so knowledgeable and took the"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "sEwiNGNuMBxH2DV-4EDymw",
+            "item_id": "GB1Bmqd-Ymw37wv3UePOCA"
+        },
+        "output": {
+            "stars": 1.0,
+            "review": "Came in to mail a package and the line was almost out the door, which is pretty typical for this location. After waiting for over 20 minutes"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "NQODFbxMdI6YXy2MVTM-4Q",
+            "item_id": "lySRYMCeVCacAeiEL65iBg"
+        },
+        "output": {
+            "stars": 5.0,
+            "review": "This is my go-to spot for all my vape needs! The staff is always super friendly and incredibly knowledgeable, and they have"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "zn23grdBC9wQ9ZXjyzJEEw",
+            "item_id": "qHCfhWPyb1GXpzq9Wk3Vkg"
+        },
+        "output": {
+            "stars": 3.0,
+            "review": "The pizza here is actually pretty good for a neighborhood spot, and it's one of the main reasons I've given them a few chances."
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "wDVy-AjU-feA40GF1RtwXw",
+            "item_id": "fixjFaCYK2yDz5F-L2ASeg"
+        },
+        "output": {
+            "stars": 2.0,
+            "review": "I really wanted to like this place, as the concept of healthy fast food is a great idea. Unfortunately, the execution just isn't there"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "GDRHJp-xDsBw-1LK1VBdZw",
+            "item_id": "Fkf9r6xz0u4mxNB54O7PDw"
+        },
+        "output": {
+            "stars": 4.0,
+            "review": "This place was a solid little spot for a quick and cheap meal, mixing Mexican and American breakfast is an interesting combo but they pulled it off. The food"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "pd8nCjLEvHBhx5t4xfclUg",
+            "item_id": "iuv_kT2zc_-4KFdUPFd9Xg"
+        },
+        "output": {
+            "stars": 5.0,
+            "review": "I'm not sure why the rating is so low, my experience here was great! I came in looking for some specific yarn for a project and the"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "d2SmmiFbMXUxT5-cTzu0OQ",
+            "item_id": "afJf3BGC-kZkrFR1CaWdww"
+        },
+        "output": {
+            "stars": 2.0,
+            "review": "I really wanted to like this place, as a good British pub is hard to find, but it just missed the mark on the fundamentals. The fish was"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "MvezyusV-u39ch6sEC3Zkg",
+            "item_id": "V7PzZzhM8HAFX6sNmadNuA"
+        },
+        "output": {
+            "stars": 3.0,
+            "review": "I'd heard a lot about this place and was excited to try it, but it didn't quite live up to the hype for"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "4NFi8Gn5FcJCA_UzOCgITg",
+            "item_id": "JRgjDdPh-8t2jbxuDMuKqw"
+        },
+        "output": {
+            "stars": 5.0,
+            "review": "This is my go-to Chipotle location and they never disappoint. The staff is always super friendly and efficient, getting the line moving quickly even during the lunch"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "rK1ALZgQGizqIlxLwh25Gg",
+            "item_id": "sl2O37Ei0v3PbM9x20Pg_A"
+        },
+        "output": {
+            "stars": 1.0,
+            "review": "Called for what I would consider an emergency leak, and nobody even bothered to call me back. I see they have good reviews, but what good is a"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "BsbIvf1W0kpMdIt2GeuNig",
+            "item_id": "wJmyu7W1K9A_gE8Ed4Bc9w"
+        },
+        "output": {
+            "stars": 5.0,
+            "review": "This is our go-to spot for a casual dinner and to watch the game. The fish and chips are always perfectly crispy and the service is consistently"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "IKk8fBaYTewgVoCCzheV0g",
+            "item_id": "j2AhQF5-dYGyJFbQd5t4aA"
+        },
+        "output": {
+            "stars": 4.0,
+            "review": "A really solid choice for vegetarian Chinese food in Chinatown. The spicy \"chicken\" was surprisingly good, with a great texture and flavor that even a"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "vHn4yfazy3GGzLZGRmt4mQ",
+            "item_id": "aVxN4BthCaIt_LP1_w0STg"
+        },
+        "output": {
+            "stars": 4.0,
+            "review": "This is a really cute and well-curated little shop. I was impressed with the selection of unique items and found a couple of great accessories without having"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "Ejcb-sIMc-1vgo4xM2FBfg",
+            "item_id": "YKQc1IpoaBfIEyMQCisZ6Q"
+        },
+        "output": {
+            "stars": 4.0,
+            "review": "I'm so sad to see they're closed now! This was my go-to spot for some delicious and unique Korean-Mexican fusion."
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "puzJObp42yQIfb3gYIj3hQ",
+            "item_id": "Hk_EjFDeK5u7rlYEUx6a_g"
+        },
+        "output": {
+            "stars": 4.0,
+            "review": "I was looking for some good Caribbean food and Jaggie's was a great find. The ackee and saltfish was delicious and tasted"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "WJ5wpZkqUyPOzFuro46iww",
+            "item_id": "tJH6fNXoMkgWRyN_Y76eZg"
+        },
+        "output": {
+            "stars": 4.0,
+            "review": "This is our go-to spot for classic, no-frills American Chinese takeout in the neighborhood. The food is consistently good and exactly what you"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "VgE2QkDTbDzD0R4NOUBv-A",
+            "item_id": "pX79hg6t0WsaCzU2npdK5w"
+        },
+        "output": {
+            "stars": 4.0,
+            "review": "I'm sad to see this place has closed, as it was a solid, no-frills ramen spot in Chinatown. The broth was"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "rq82qNDKZnVWO6smWEGkNQ",
+            "item_id": "ZLerfIo2cDSPXJ9K57WYxQ"
+        },
+        "output": {
+            "stars": 4.0,
+            "review": "I came in for a trim and color and was really happy with the results. The stylist listened to what I wanted and the prices were very reasonable"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "Coie_PxO9Hzt6qBKxb-S9Q",
+            "item_id": "eqK66D5jQRO2eY1_MhAo_Q"
+        },
+        "output": {
+            "stars": 5.0,
+            "review": "I'm always on the hunt for a great Italian hoagie, and Dan's absolutely delivers. The quality of the fresh-sliced meat"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "zvFLlakt9gRTu9JxXVnRhw",
+            "item_id": "vPSRs9RRGbv4Y4nNWyw5Vw"
+        },
+        "output": {
+            "stars": 1.0,
+            "review": "I was really excited to try a healthy spot, but this was a huge letdown. I paid way too much for a bland, watery smoothie"
+        }
+    },
+    {
+        "task": {
+            "description": "This is a simulation task. \n            You are a simulation agent that simulates a user's rating and review with an item. \n            There is a user with id and an item with id. ",
+            "user_id": "8cXjs8VbsYvOYblV-5oCvA",
+            "item_id": "3oxlWgUlq7gN7-qXhOpLpg"
+        },
+        "output": {
+            "stars": 5.0,
+            "review": "So sad to see this place has closed! We absolutely loved the authentic Puerto Rican food here, especially the mofongo. The flavors were always incredible"
+        }
+    }
+]
