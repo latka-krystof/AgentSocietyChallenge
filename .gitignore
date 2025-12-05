@@ -20,4 +20,5 @@ dataset/
 *.json
 !final_eval_10_tasks/*.json
 !final_eval_50_tasks/*.json
+!VADER_eval_50_tasks/*.json
 .gcp-credentials/

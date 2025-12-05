@@ -307,7 +307,7 @@ if __name__ == "__main__":
     logging.getLogger().setLevel(logging.INFO)
 
     task_set = "yelp"
-    num_tasks = 100
+    num_tasks = 50
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     results_dir = Path(f"./memory_planning_reasoning_{task_set}_{timestamp}")
     results_dir.mkdir(parents=True, exist_ok=True)
@@ -321,7 +321,7 @@ if __name__ == "__main__":
 
     simulator.set_llm(
         VertexAILLM(
-            project_id=os.getenv("GCP_PROJECT_ID", "your-gcp-project-id"),
+            project_id=os.getenv("GCP_PROJECT_ID") or "agentsocietychallenge",
             location="us-central1",
             model="gemini-2.5-pro",
             use_vertex_ai_embeddings=False,

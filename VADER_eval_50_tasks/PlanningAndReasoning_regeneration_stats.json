@@ -1,0 +1,9 @@
+{
+    "total_reviews": 15,
+    "regenerations_triggered": 2,
+    "regenerations_successful": 2,
+    "regeneration_rate": 0.13333333333333333,
+    "avg_sentiment_improvement": 0.30242500000000005,
+    "improvements_positive": 2,
+    "improvements_total": 2
+}
