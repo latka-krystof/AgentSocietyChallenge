@@ -7,6 +7,7 @@ This repository contains our implementation of LLM agents for user behavior simu
 - **`websocietysimulator/`**: Core library containing the simulation framework, agent base classes, LLM clients, and evaluation tools.
 - **`agents/`**: Contains our agent implementations:
   - `ModelingAgent_memory_planning_and_reasoning.py` - **Final combined agent** (Memory + Planning + Reasoning)
+  - `ModelingAgent_Vader.py` - Vader agent (Planning + Reasoning with VADER sentiment analysis)
   - `ModelingAgent_baseline.py` - Baseline agent
   - `ModelingAgent_planning.py` - Planning-only agent
   - `ModelingAgent_planning_and_reasoning.py` - Planning + Reasoning agent
@@ -150,6 +151,24 @@ This will:
 3. Generate evaluation results for each agent
 4. Display a comprehensive comparison summary
 
+### Running the Vader Agent
+
+The Vader agent (`ModelingAgent_Vader.py`) combines planning and reasoning strategies with VADER sentiment analysis. It will automatically run comparisons against other agents:
+
+```bash
+conda activate websocietysimulator
+export GCP_PROJECT_ID=YOUR_PROJECT_ID  # If not set permanently
+python agents/ModelingAgent_Vader.py
+```
+
+This will:
+1. Run the Vader agent (Planning + Reasoning with VADER sentiment analysis)
+2. Run all comparison agents:
+   - Baseline
+   - Planning Only
+3. Generate evaluation results for each agent
+4. Display a comprehensive comparison summary
+
 ### Running Individual Agents
 
 You can also run individual agents for testing:
@@ -217,28 +236,36 @@ The script automatically prints a comparison summary showing:
 
 ## Agent Architecture
 
-### Final Combined Agent (Memory + Planning + Reasoning)
-
-Our final agent combines three key components:
+Our agents are built using three key components that can be combined in different ways:
 
 1. **Planning Module** (`PlanningOnlyModule`): 
    - Creates a deterministic plan for gathering context
    - Executes structured steps: fetch user, business, reviews
+   - Provides a systematic approach to information gathering
 
 2. **Memory Module** (`MemoryUserProfile`):
    - Stores and retrieves relevant reviews from memory
    - Builds user preference profiles
+   - Enables agents to leverage historical context and past interactions
 
 3. **Reasoning Module** (`ReasoningCOTWithReflection`):
    - Uses Chain of Thought with reflection
    - Determines rating and generates review text based on gathered context
+   - Applies logical reasoning to synthesize information and produce outputs
 
-The agent workflow:
-1. Executes the planning structure to gather data
-2. Stores item reviews in memory during execution
-3. Retrieves similar reviews from memory
-4. Uses the reasoning module to determine rating and generate review
-5. Returns both rating and review text
+Different agent implementations combine these components in various ways:
+- **Baseline**: Minimal implementation without these modules
+- **Planning-only**: Uses only the planning module
+- **Reasoning-only**: Uses only the reasoning module
+- **Memory-only**: Uses only the memory module
+- **Combined agents**: Use two or more components together (e.g., Planning + Reasoning, Memory + Reasoning, Memory + Planning + Reasoning)
+- **Vader agent**: Uses Planning + Reasoning with VADER sentiment analysis for enhanced rating prediction
+
+The typical agent workflow:
+1. Executes the planning structure to gather data (if planning module is used)
+2. Stores and retrieves relevant information from memory (if memory module is used)
+3. Uses the reasoning module to determine rating and generate review text
+4. Returns both rating and review text
 
 ---
 

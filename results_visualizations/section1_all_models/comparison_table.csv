@@ -1,0 +1,8 @@
+Model,Preference Estimation,Review Generation,Overall Quality
+PlanningOnly,0.8780,0.8027,0.8403
+PlanningAndReasoning,0.8780,0.7914,0.8347
+MemoryAndReasoning,0.8300,0.7894,0.8097
+Baseline,0.8300,0.7876,0.8088
+Memory,0.8300,0.7803,0.8052
+MemoryPlanningAndReasoning,0.8140,0.7688,0.7914
+Reasoning,0.3900,0.5977,0.4939
